@@ -1,0 +1,715 @@
+body 
+{
+	overflow-x: hidden;
+    overflow-y: scroll;
+	min-height: 100vh;
+	min-width: 98vw;
+	display: flex;
+	flex-direction: column;
+    font-family: andale mono, monospace;
+    background-image: url("bg_0.png");
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    user-select: none;
+	color: #000000
+}
+
+h1, h2, h3, h4 
+{
+    font-weight: bold;
+    position: relative;
+}
+
+header 
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgba(255, 255, 255, 0.5);
+    transition: ease-in-out 0.5s;
+	backdrop-filter: blur(3px);
+    color: #000000;
+	padding: 2vh;
+}
+
+header:hover 
+{
+    padding: 3vh;
+    background-color: rgba(255, 255, 255, 0.728);
+    backdrop-filter: blur(10px);
+}
+
+main {flex: 1;}
+
+body h1 {font-size: 1.7em;
+}
+
+nav 
+{
+	display: flex;
+    flex-direction: row-reverse;
+    color: #000000;
+    padding: 1vh;
+}
+
+nav ul 
+{
+    color: #000000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li 
+{
+    display: inline;
+    margin-right: 2vw;
+}
+
+nav ul li a 
+{
+	margin-right: 7vw;
+    color: #000000;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+nav ul li a:hover {color: rgb(255, 166, 158);}
+
+section {padding: 2vw;}
+
+footer 
+{
+	min-height: 20vh;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgb(0, 0, 0.7));
+	backdrop-filter: blur(3px);
+    color: #000000;
+    padding: 1vh;
+    position: inline-block;
+    bottom: 0;
+    width: 100%;
+}
+
+button
+{
+    transition: background-color 0.3s;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(3px);
+    color: #839788;
+    font-size: 0.7em;
+    padding: 0.5vw 2vw;
+}
+
+a 
+{
+    text-decoration: none;
+    transition: color 0.3s;
+    color: #839788;
+}
+
+a:hover {color: #ff5c4e;}
+
+button:hover {background: #FFA69E;}
+
+
+
+
+
+#bubbleExtender 
+{
+    top: 40%;
+    left: 50%;
+    z-index: 10000000;
+}
+
+#About
+{
+    display: none;
+	text-align: left;
+}
+
+#Contact 
+{ 
+	display: none;
+	text-align: left;
+}
+
+#Welcome 
+{
+	text-align: left;
+	display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+
+#Contact ul li 
+{
+	padding: 3%;
+}	
+
+#bubbleInfo 
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+    display: none;
+    animation: flyIn 0.5s forwards;
+    transition: opacity 0.3s ease, padding 0.3s, background-color 0.3s, backdrop-filter 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 99991;
+}
+
+#bubbleInfo:hover
+ {
+    padding: 22px;
+    background-color: rgb(0, 175, 84, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+#closeButton
+ {
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+    color: #000000;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 1vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    height: 0.7vw;
+    border-radius: 5vw;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    cursor: pointer;
+    z-index: 99992;
+    transition: all 0.3s ease-in-out;
+}
+
+#closeButton:hover 
+{
+    background-color: rgb(0, 175, 84, 0.5);
+    color: rgb(255, 214, 57);
+}
+
+
+
+
+
+.highlighted.resetting
+ {
+    animation: resetAnimation 0.5s ease forwards;
+}
+
+.highlighted 
+{
+    animation: highlightAnimation 0.5s ease forwards;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.specialText 
+{
+    font-weight: bold; 
+    color: rgb(0, 175, 84);
+    transition: all 0.3s ease-in-out;
+}
+
+.specialText:hover
+{ 
+    color: rgb(0, 124, 190);
+}
+
+.background0 
+{
+    background-image: url("bg_0.png");
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.scrollPromptAbout, .scrollPromptWelcome
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+	background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(3px);
+	padding: 1vw;
+	height: 0.7vw;
+	border-radius: 5vw;
+    position: fixed;
+    bottom: 3vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.7em;
+    color: #000000;
+	z-index: 9999; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.scrollPromptAbout:hover, .scrollPromptWelcome:hover
+{
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: rgb(0, 175, 84, 0.5);
+    color: rgb(0, 0, 0);
+	backdrop-filter: blur(5px);
+    padding: 1.5%;
+}
+
+.gotoButtonAbout, .gotoButtonWelcome, .gotoButtonContact 
+{
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+	display: flex;
+    visibility: hidden;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+	background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(3px);
+	padding: 1vw;
+	height: 0.7vw;
+	border-radius: 5vw;
+    position: fixed;
+    bottom: 3vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.7em;
+    color: #000000;
+	z-index: 9999; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.gotoButtonContact:hover, .gotoButtonWelcome:hover, .gotoButtonAbout:hover 
+{
+    background-color: rgb(0, 175, 84, 0.5);
+    color: rgb(0, 0, 0);
+	backdrop-filter: blur(3px);
+    padding: 1.5%;
+}
+
+.flyContainer0, .flyContainer1, .flyContainer2 
+{
+    margin-bottom: 8vw; 
+    margin-top: 3vw; 
+    text-align: center;
+    padding-left: 10vw; 
+    padding-right: 10vw;
+    width: 80vw;
+    align-self: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(3px);
+    padding: 1%;
+}
+
+.infoBox 
+{
+    position: fixed;
+    top: 80%;
+    left: 80%;
+    width: 10vw;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 99991;
+    visibility: hidden;
+    opacity: 0;
+	transition: all 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(3px);
+    padding: 1%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container 
+{
+	margin-bottom: 5vh;
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(3px);
+    padding: 1%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.aboutContainer 
+{
+	margin-bottom: 5vh;
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+    align-content: center;
+    background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(3px);
+    padding: 1%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+}
+
+.aboutContainer:hover 
+{
+    align-content: center;
+    transition: all 0.5s ease-in-out;
+    background-color: rgb(255, 214, 57, 0.5);
+	backdrop-filter: blur(10px);
+    padding: 2%;
+}
+
+.flyContainer0:hover
+{
+    padding: 2%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 163, 175, 0.5);
+}
+
+.flyContainer1:hover
+{
+    padding: 2%;
+    backdrop-filter: blur(10px);
+    background-color: rgb(0, 175, 84, 0.5);
+}
+
+.flyContainer2:hover
+{
+    padding: 2%;
+    backdrop-filter: blur(10px);
+    background-color: rgb(120, 113, 214, 0.5);
+}
+
+
+.flyContainer2::before,.flyContainer2::after 
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: inherit;
+}
+
+.flyContainer0::before,.flyContainer0::after 
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: inherit;
+}
+
+.flyContainer1::before,.flyContainer1::after 
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: inherit;
+}
+
+.hoverContainer 
+{
+	margin-bottom: 5vh;
+	transition: all 0.5s ease-in-out;
+	border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(3px);
+    padding: 1%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hoverContainer:hover 
+{
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    background-color: rgb(0, 175, 84, 0.5);
+	backdrop-filter: blur(10px);
+    padding: 2%;
+}
+
+.expanded {padding-bottom: 1%;}
+
+.dtabbed {padding-left: 6%;}
+
+.ttabbed {padding-left: 9%;}
+
+.expContent {display: none;}
+
+.expTitle 
+{
+    flex: 1;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.expTitle:hover {color: rgb(255, 214, 57);}
+
+.headerContainer 
+{
+    display: flex;
+    align-items: center;
+	justify-content: space-between;
+}
+
+.eduImage 
+{
+    margin-left: 4vw;
+	margin-right: 4vw;
+}
+
+.eduImage img 
+{
+    max-width: 100%;
+    height: auto;
+}
+
+.blurredBackground {filter: blur(5px);}
+
+.extraContentContainer 
+{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.inlineTextBubble 
+{
+    display:inline;
+    opacity: 0;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.textBubble 
+{
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.bubbleContainer 
+{
+    position:relative;
+    width: 90vw;
+    height: 90vh;
+	margin-bottom: 5vh;
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+    padding: 10%;
+}
+
+.bubbles 
+{
+    font-weight: bold;
+    position:absolute;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    z-index: 9999;
+    padding: 1%;
+    transition: background-color 0.3s ease;
+    transition: width 0.3s, height 0.3s, color 0.3s, background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bubbles:hover 
+{
+    color: rgb(255, 255, 255);
+    background-color: rgb(245, 0, 33, 0.5);
+    width: 8vw;
+    height: 8vw;
+    z-index: 100000;
+    animation: bubbleHoverAnimation 0.5s ease-in-out;
+}
+
+.fadeAway 
+{
+    opacity: 1;
+    animation: fadeOut 2s ease-in-out forwards;
+}
+
+.hidden 
+{
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+
+
+
+@keyframes bubbleHoverAnimation 
+{
+    0% 
+    {
+        transform: scale(1);
+    }
+    35% 
+    {
+        transform: scale(1.2);
+    }
+    100% 
+    {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut 
+{
+    0% 
+    {
+      opacity: 1;
+    }
+    100% 
+    {
+      opacity: 0;
+    }
+}
+
+@keyframes fadeIn 
+{
+    0% 
+    {
+      opacity: 0;
+    }
+    100% 
+    {
+      opacity: 1;
+    }
+}
+
+@keyframes flyIn 
+{
+    0% 
+    {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% 
+    {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+  
+@keyframes flyOut 
+{
+    0% 
+    {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% 
+    {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+}
+
+@keyframes bubbleAnimation 
+{
+    0% 
+    {
+        transform: scale(1);
+    }
+    50% 
+    {
+        transform: scale(1.2);
+    }
+    100% 
+    {
+        transform: scale(1);
+    }
+}
+
+@keyframes scrollBackground 
+{
+    from 
+    {
+        background-position: 0 0;
+    }
+    to 
+    {
+        background-position: 0 100%;
+    }
+}
+
+@keyframes highlightAnimation 
+{
+    from 
+    { 
+        color:rgb(0, 0, 0); 
+    }
+    to 
+    { 
+        color: rgb(158, 0, 139); 
+    }
+}
+
+@keyframes resetAnimation
+{
+    from
+    {
+        color: rgb(158, 0, 139); 
+    }
+    to 
+    {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+}
