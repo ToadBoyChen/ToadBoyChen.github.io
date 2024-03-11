@@ -797,7 +797,7 @@ section {
         left: 0;
         width: 100%;
         padding: 1rem;
-        background-color: rgba(63, 60, 87, 0.9);
+        background-color: rgb(63, 60, 87);
     }
 
     .welcome h1 {
