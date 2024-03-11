@@ -188,9 +188,8 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--bg-color-blur);
+    background-color: var(--bg-color);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
     z-index: 90;
     transition: all 1s ease;
 }
