@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="expires" content="0">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Toby Chen</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="scripts.js" defer></script>
+    </head>
+    <body>
+        <header class = "header">
+            <img src="Media/logo.svg" alt="Logo" class = "logo"></img>
+            <div class = "titleContainer">
+                <h1>Toby Chen</h1>
+            </div>
+            <button class="menuToggle">
+                <img class="menuIcon" src="Media/menuIcon.png" alt="Menu Icon" style = "width: 7vw; height: auto; display: inline-block;"></img>
+                <img class="exitButton" src="Media/exitIcon.png" alt="Exit Icon" style = "width: 7vw; height: auto; display: none;"></img>
+            </button>
+            <nav class = "navbar">                
+                <a href="#welcome" class = "active1">Welcome</a>
+                <a href="#about">About me</a>
+                <a href="#education">Education</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a> 
+            </nav>
+        </header>
+        <main>
+            <section id = "welcome" class = "welcome slideInDown">
+                <div class="welcomeTitleContainer">
+                    <h2>Welcome,</h2>
+                    <h2>I'm a Mathematician, Computer Scientist and,</h2>
+                    <h1 class = "longSlideInLeft-15"><span class = "highlighted">Programmer.</span></h1>
+                </div>
+                <div class = "paragraphContainer" style="margin: 1vw 0 0 0;">
+                    <p>I'm a Mathematician at Queen Mary's University of London, and a coding fanatic. This website is <span class = "highlighted"> coded, designed and maintained by myself.</span> I've included my projects, interests and resume below. Please enjoy my website and get in contact with me for any further details. Thank you for visiting!</p>
+                    <p>Feel free to follow me along my journey through my socials below, and get in contact with me through the contact form at the end:</p>
+                </div>
+                <div class = "socialsContainer" style = "align-self: center; margin: 5vh 0 5vh 0;">
+                    <button  onclick = "window.open('https://www.instagram.com/tobychen1337/', '_blank')"><img src="Media/instagramLogo.png" alt="Instagram"></button>
+                    <button  onclick="window.open('https://www.linkedin.com/in/toby-chen-167519298', '_blank')"><img src="Media/linkedinLogo.png" alt="Linkedin"></button>
+                    <button  onclick="window.open('https://github.com/ToadBoyChen', '_blank')"><img src="Media/githubLogo.png" alt="Linkedin"></button>
+                </div>
+                <p style="margin: 0 0 0.3vh 0;">I have coded a <span class = "highlighted">large plethora of projects</span> that interest me and showcase my skills. Many have mathematical interest,</p>
+                <h2 style = "margin: 0 0 1.5vh 0;">and some notable projects include:</h2>
+                <div class = "slideShowContainer">
+                    <div class = "slides fade">
+                        <div class = "slideText">
+                            Fractals
+                        </div>
+                        <img src = "Media/fractal.gif" alt = "Fractals">
+                        <div class = "numberText">
+                            1 / 3
+                        </div>
+                    </div>
+                    <div class = "slides fade">
+                        <div class = "slideText">
+                            Chess Bot
+                        </div>
+                        <img src = "Media/chess.gif" alt = "Chess Bot">
+                        <div class = "numberText">
+                            2 / 3
+                        </div>
+                    </div>
+                    <div class = "slides fade">
+                        <div class = "slideText">
+                            Path Finding
+                        </div>
+                        <img src = "Media/pathFinding.gif" alt = "Path Finding">
+                        <div class = "numberText">
+                            3 / 3
+                        </div>
+                    </div>
+                    <a class="next" onclick="plusSlides(1)">></a>
+                    <a class="prev" onclick="plusSlides(-1)">< </a>
+                </div>
+            </section>
+            <section id = "about" class = "about">
+                <div class = "aboutContent">
+                    <h1 style = "margin: 2vw;">About <span class = "highlighted">me,</span></h1>
+                    <p style = "margin: 2vw;"><span class="highlighted">Current maths undergrad </span>at Queen Mary's University of London, with specific interests in <span class="highlighted">cryptography, programming and mathematics</span>. I'm also a Kickboxer fighting nationally three times, a rugby player competing for QMRFC 1st team and a music fan playing the electric guitar for over 5 years.</p>
+                    <div class="container_about">
+                        <div class="expContent" style="box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);">
+                            <p><span class="highlighted-dark">Longtime programmer </span>, no professional experience but have coded many projects for fun such as<span class="highlighted-dark"> chess bot, password brute forcing algorithm, path finding algorithms and a fractal generator </span>. I used a multitude or languages including <span class="highlighted-dark">python, java, c#</span> and many more. I have a genuine passion for programming and had great fun coding this website and will continue improving it. I’m also a <span class="highlighted-dark">passionate mathematician</span> evidenced by my pursuit of a mathematics degree. I hope to incorporate mathematics onto this website, maybe by uploading all my notes here? This idea has yet to be explored but please check in to see progress.</p>
+                            <br></br>
+                            <p>This website will receive regular updates as my coding abilities increase, and hope to create a <span class="highlighted-dark">mathematical database on here with LaTeX</span> incorporated using APIs. This website was made using <span class="highlighted-dark">HTML, CSS, JavaScript and JQuery</span>, and serves to display my abilities as a front-end programmer, designer and showcase my achievements and aspirations.</p>
+                        </div>
+                        <div class = "button1" onclick = "toggleContent_About(this)">Read More</div>
+                    </div>
+                </div>
+            </section>
+            <section id = "education" class = "education">
+                <h1>Education</h1>
+                <div class="container" onclick="toggleContent(this)">
+                    <div class = "containerHeader">
+                        <img src="Media/preistlands_logo.png" alt="Preistlands School">
+                        <h2>Preistlands School</h2>
+                    </div>
+                    <div class="expContent">
+                        <p style="margin: 0 0 1vh 0;">Located in Lymington, Hampshire, England, Preistlands is a co-educational comprehensive school that I attended from <span class="highlighted-dark">2015 - 2020 </span>, completing 10 GCSEs, engaging in extracurricular activities, most notably their rugby and basketball team. Preistlands is where I was <span class="highlighted-dark">first introduced to Python and networking</span>, in year 9 (14).</p>
+                        <h2>5 Years</h2>
+                        <h2 style="margin: 0 0 1vh 0;">10 Subjects, those being:</h2>
+                        <ul>
+                            <li>Mathematics - grade <span class="highlighted-dark"> 8</span></li>
+                            <li>Biology - grade <span class="highlighted-dark"> 8</span></li>
+                            <li>Chemistry - grade <span class="highlighted-dark"> 7</span></li>
+                            <li>Physics - grade <span class="highlighted-dark"> 6</span></li>
+                            <li>Computer Science - grade <span class="highlighted-dark"> 6</span></li>
+                            <li>Geography - grade <span class="highlighted-dark"> 6</span></li>
+                            <li>Music - grade <span class="highlighted-dark"> 5</span></li>
+                            <li>English Language - grade <span class="highlighted-dark"> 5</span></li>
+                            <li>English Literature - grade <span class="highlighted-dark"> 5</span></li>
+                            <li>Fine Art - grade <span class="highlighted-dark"> 4</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container" onclick="toggleContent(this)">
+                    <div class = "containerHeader">
+                        <img src="Media/brockenhurst_logo.png" alt="Brockenhurst College">
+                        <h2>Brockenhurst College</h2>
+                    </div>
+                    <div class="expContent">
+                        <p style="margin: 0 0 1vh 0;">Located in Brockenhurst, Hampshire, England, Brockenhurst college is a sixth form college for ages 16 and onwards, where I had attended from <span class="highlighted-dark">2020 - 2022</span>. Here I undertook 3 A levels and 1 GCSE (which i did not complete), gained a <span class="highlighted-dark">comprehensive understanding of C# and advanced level Mathematics</span>. I was also a sport scholar, being part of the <span class="highlighted-dark">TASS scheme</span>.</p>
+                        <h2>2 Years</h2>
+                        <h2 style="margin: 0 0 1vh 0;">4 Subjects, those being:</h2>
+                        <ul>
+                            <li>A level Mathematics - grade <span class="highlighted-dark"> C</span></li>
+                            <li>A level Biology - grade <span class="highlighted-dark"> B</span></li>
+                            <li>A level Computer Science - grade <span class="highlighted-dark"> B</span></li>
+                            <li>GCSE Chinese (Mandarin) - <span class="highlighted-dark">predicted </span>grade <span class="highlighted-dark"> 7</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container" onclick="toggleContent(this)">
+                    <div class = "containerHeader">
+                        <img src="Media/hwu_logo.png" alt="Heriot Watt University">
+                        <h2>Heriot Watt University</h2>
+                    </div>
+                    <div class="expContent">
+                        <p style="margin: 0 0 1vh 0;">Renowned public research university based in Edinburgh, Scotland, Heriot-Watt University is known for its <span class="highlighted-dark">strong reputation in various fields, particularly in engineering, business, mathematics, computer science, and the physical sciences</span>. I had attended for a foundation year, where I completed their Mathematics and Computer Science foundation degree. I gained a deeper understanding of <span class="highlighted-dark">mathematics with the foundation focussing on calculus and elementary number theory</span>. Once again I was a sports scholar for Kickboxing, and attended basketball and boxing sessions at the university.</p>
+                        <h2>1 Year</h2>
+                        <h2 style="margin: 0 0 1vh 0;">1 Subject, being:</h2>
+                        <ul>
+                            <li>A foundation in Mathematics, Physics and Computer Science - grade <span class="highlighted-dark"> 1st, 77%</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container" onclick="toggleContent(this)">
+                    <div class = "containerHeader">
+                        <img src="Media/qmul_logo.png" alt="Queen Mary's University of London" style="width: 5vw; height: auto;">
+                        <h2>Queen Mary's University of London</h2>
+                    </div>
+                    <div class="expContent">
+                        <p style="margin: 0 0 1vh 0;">Queen Mary University of London (QMUL) is a leading public research university located in London, England, Regarded for its research-intensive environment and academic excellence across various disciplines. The university is <span class="highlighted-dark">particularly renowned for its strengths in the fields of medicine, dentistry, law, economics, mathematics, computer science, engineering, humanities, and social sciences</span>. I am a current student here at QMUL, completing my Mathematics degree. Here I have already leant an immense amount of mathematics and programming skills, where I have <span class="highlighted-dark">particularly enjoyed our "Introduction to Algebra" course</span>, my first taste of some proper pure mathematics. Here I hope to develop many transferable skills and apply them to the real world through projects, such as this website. I intend to <span class="highlighted-dark">work within the programming, cyber security and the IT industry</span>. I am a current member of Queen Mary's student union, playing for the 1st QMRFC team, and fighting in Muay Thai.</p>
+                        <h2>3 Years</h2>
+                        <h2 style="margin: 0 0 1vh 0;">1 Subject, being:</h2>
+                        <ul>
+                            <li>Mathematics BSc with Hons - grade <span class="highlighted-dark">Pending</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id = "portfolio" class = "portfolio">
+                <div class="portfolioContent" style="margin: 2vw;">
+                    <h1 style="align-self: center;">Portfolio</h1>
+                    <div class = "contentGrouper">
+                        <div class="container_Portfolio">
+                            <h2>Fractal Generator</h2>
+                            <p>Coded in <span class="highlighted-dark">Python</span> using numpy, matplotlib.</p>
+                            <img src="Media/fractal.gif" alt="fractals">
+                        </div>
+                        <div class="container_Portfolio">
+                            <h2>Chess Bot</h2>
+                            <p>Coded in <span class="highlighted-dark">Python</span> and runs in the console.</p>
+                            <img src="Media/chess.gif" alt="chess">
+                        </div>
+                        <div class="container_Portfolio">
+                            <h2>Path Finding</h2>
+                            <p>Coded in <span class="highlighted-dark">C#</span> and runs in the console.</p>
+                            <img src="Media/pathFinding.gif" alt="path finding">
+                        </div>
+                    </div>
+                    <div class = "contentGrouper">
+                        <div class="container_Portfolio">
+                            <h2>Password Brute Forcing</h2>
+                            <p>Console <span class="highlighted-dark">Python</span> application.</p>
+                            <img src="Media/hack.gif" alt="Password Hack">
+                        </div>
+                        <div class="container_Portfolio">
+                            <h2>Particle Collision</h2>
+                            <p>Coded in <span class="highlighted-dark">C#</span> and uses window forms.</p>
+                            <img src="Media/particle.gif" alt="Particle Simulator">
+                        </div>
+                        <div class="container_Portfolio">
+                            <h2>Calculus Calculator</h2>
+                            <p>Coded in <span class="highlighted-dark">Python</span> and runs in the console.</p>
+                            <img src="Media/calculus.gif" alt="Calculus Calculator">
+                        </div>
+                    </div>
+                    <p>All code can be found on <a href="https://github.com/ToadBoyChen" class="intractableText" target="_blank">my github</a>. Please note I'm currently in the process of uploading my code (if you can't already see it).</p>
+                </div>
+            </section>
+            <section id = "contact" class = "contact" style="min-height: 80vh;">
+                <h1>Contact me,</h1>
+                <p>I'd be more than happy to talk to anyone who has any enquiries or questions. If you wish to contact me, please contact me at <a class = "intractableText" onclick="copyText('toby.chen1337@outlook.com')">my email</a>, or <a class="intractableText" onclick="copyText('07714 387919')">my phone number</a>.</p>
+                <p>Or you can contact me through my social media accounts at <a class="intractableText" href="https://www.instagram.com/tobychen1337/" target="_blank">my instagram</a> or <a class="intractableText" href="https://www.linkedin.com/in/toby-chen-167519298/" target="_blank">my linkedin</a>.</p>
+                <h2 class="highlighted">Thankyou for Visiting</h2>
+            </section>
+        </main>
+        <footer class = "footer">
+            <p>2024 - Toby Chen - Last Updated: 11/03/2024 - Icons from <a class = "intractableText" href = "https://www.flaticon.com" target="_blank">flaticon</a>.</p>
+            <button id="scrollToTop" onclick="scrollToTop()"><img src="Media/upArrowBg.png" alt="Up Arrow" class = "upArrow"></img></button>
+        </footer>
+    </body>
+</html>
