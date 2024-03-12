@@ -17,11 +17,13 @@ window.addEventListener('scroll', function() {
     });
 
     var header = document.querySelector('.header');
+    var menu = this.document.querySelector('.menuToggle');
     const screenWidth = window.innerWidth;
 
-    if (screenWidth <= 786)
+    if (screenWidth <= 1000)
     {
-        header.style.padding = '2vw 4vh 2vw 2vh';
+        header.style.padding = '3vw 4vw 3vw 3vw';
+        menu.style.padding = '0vw 5vw 0 5vw';
     }
     else
     {
@@ -86,12 +88,10 @@ function scrollToTop() {
 let slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
@@ -144,20 +144,21 @@ function copyText(text)
 }
 
 function animateAboutSection() {
-    var i = 0;
     var aboutSection = document.getElementById("about");
     var aboutContent = document.querySelector(".aboutContent");
     var educationSection = document.getElementById("education");
     var portfolioSection = document.getElementById("portfolio");
     var portfolioContent = document.querySelector(".portfolioContent");
     var contactSection = document.getElementById("contact");
-
-    var scroll = document.querySelector(".scrollPrompt");
+    var contactContent = document.querySelector(".contactContent");
+    var mathSection = document.getElementById("mathematics");
+    var mathContent = document.querySelector(".mathematicsContent");
 
     var educationOffsetTop = educationSection.offsetTop;
     var aboutOffsetTop = aboutSection.offsetTop;
     var portfolioOffSetTop = portfolioSection.offsetTop;
     var contactOffSetTop = contactSection.offsetTop;
+    var mathOffSetTop = mathSection.offsetTop;
 
     var windowHeight = window.innerHeight;
     var scrollY = window.scrollY;
@@ -167,7 +168,6 @@ function animateAboutSection() {
     if (check > aboutOffsetTop) 
     {
         aboutContent.classList.add("show");
-        i = i + 1;
     }
 
     if (check > educationOffsetTop)
@@ -180,9 +180,14 @@ function animateAboutSection() {
         portfolioContent.classList.add("show");
     }
 
+    if (check > mathOffSetTop)
+    {
+        mathContent.classList.add("show");
+    }
+
     if (check > contactOffSetTop)
     {
-        contactSection.classList.add("show");
+        contactContent.classList.add("show");
     }
 }
 
