@@ -426,6 +426,59 @@ h2 {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .2);
 }
 
+.rainbow {
+    animation: rainbowAnimation 2s linear infinite;
+}
+
+.mathContainer {
+    font-size: 1.3rem;
+    background-color: var(--second-bg-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .2);
+    padding: 2vw 4vw 2vw 4vw;
+    border-radius: 10px;
+    margin: 2vw;
+}
+
+@keyframes rainbowAnimation {
+    0%   { color: red; }
+    20%  { color: orange; }
+    40%  { color: yellow; }
+    60%  { color: violet; }
+    80%  { color:springgreen; }
+    100%   { color: red; }
+}
+
+.mathematics {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2vw 0 2vw 0;
+}
+
+.mathematicsContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    opacity: 0;
+    transform: translateX(90%);
+    transition: all 1s ease;
+    margin: 2vw;
+}
+
+.mathematicsContent.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mathematics h1 {
+    text-align: center;
+}
+
+.mathematics h2 {
+    margin: 1vw 0 1vw 0;
+}
+
 .portfolioContent {
     opacity: 0;
     transform: translateX(70%);
@@ -441,17 +494,23 @@ h2 {
 
 .contact {
     display: flex;
-    opacity: 0;
-    transform: translateY(-70%);
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 5vh;
+    background: var(--second-bg-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .2);
 }
 
-.contact.show {
+.contactContent {
+    opacity: 0;
+    transform: translateX(-70%);
+    margin: 2vw;
+    transition: all 1s ease;
+}
+
+.contactContent.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 .contact h1{
@@ -473,8 +532,6 @@ h2 {
     align-items: center;
     text-align: center;
     align-content: center;
-    background: var(--second-bg-color);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .2);
 }
 
 .slideShowContainer {
@@ -661,9 +718,9 @@ section {
     }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1400px) {
     .navbar a {
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
 
     .titleContainer h1{
@@ -671,17 +728,11 @@ section {
     }
 }
 
-@media screen and (max-width: 970px) {
-    .navbar a {
-        font-size: 1.7vw;
-    }
+@media screen and (max-width: 1000px) {
 
-    .titleContainer h1{
-        font-size: 3vw;
+    .mathematics {
+        margin: 5vw 0 5vw 0;
     }
-}
-
-@media screen and (max-width: 786px) {
 
     .welcome {
         margin: 20vw 5vw 5vw 5vw;
@@ -699,16 +750,18 @@ section {
     .expContent_Portfolio {
         margin: 3vw;
     }
-
-    .contact {
-        display: flex;
+    
+    .contactContent {
         opacity: 0;
-        transform: translateY(-70%);
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: 10vw;
+        transform: translateX(-70%);
+        transition: all 1s ease;
     }
+    
+    .contactContent.show {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
     
     .contact h1{
         margin: 9vw;
@@ -805,7 +858,6 @@ section {
         width: 100%;
         padding: 2vw;
         background-color: rgb(63, 60, 87);
-        /*backdrop-filter: blur(5px);*/
     }
 
     .header h1 {
