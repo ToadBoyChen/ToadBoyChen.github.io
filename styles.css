@@ -65,34 +65,6 @@ h2 {
     opacity: 1;
 }
 
-.scrollPrompt {
-    cursor: pointer;
-    display: none;
-	align-items: center;
-	justify-content: center;
-	background-color: rgba(101, 98, 122, 0.5);
-	backdrop-filter: blur(3px);
-	padding: 1vh 2vw 1vh 2vw;
-	border-radius: 5vw;
-    position: fixed;
-    bottom: 5vh;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    font-size: 0.7em;
-    color: #000000;
-	z-index: 999; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-}
-
-.scrollPrompt:hover {
-    padding: 2vh 3vw 2vh 3vw;
-    box-shadow: 0 0 0.6rem var(--imp-color);
-    background-color: rgba(255, 225, 0, 0.3);
-    color: var(--imp-color);
-}
-
 .intractableText {
     cursor: pointer;
     color: var(--int-color);
@@ -169,6 +141,10 @@ h2 {
     display: none;
 }
 
+.navbar.collapsed {
+    display: none;
+}
+
 .logo {
     width: 5vw; height: auto;
     margin-right: 1vw;
@@ -179,12 +155,13 @@ h2 {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2vw 4vh 2vw 2vh;
+    padding: 2vw 3vw 2vw 3vw;
     background: var(--bg-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--bg-color);
+    background-color: rgb(39, 37, 54, 1);
+    /*backdrop-filter: blur(5px);*/
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
     z-index: 90;
     transition: all 1s ease;
@@ -323,7 +300,7 @@ h2 {
 }
 
 .socialsContainer button {
-    margin: 1vh 4vw 1vh 4vw;
+    margin: 1vw 4vw 1vw 4vw;
     padding: 0.5vw;
     border-radius: 13px;
     background-color: var(--third-bg-color);
@@ -501,12 +478,12 @@ h2 {
 }
 
 .slideShowContainer {
-    min-height: 80vh;
+    min-height: 80%;
     margin: auto;
     display: flex;
     align-items: center;
     align-self: center;
-    padding: 1vh 15vw 1vh 15vw;
+    padding: 1vw 15vw 1vw 15vw;
     border-radius: 10px;
     box-shadow: 0 4px 8px #000000;
     background-color: var(--second-bg-color);
@@ -705,18 +682,63 @@ section {
 }
 
 @media screen and (max-width: 786px) {
+
+    .welcome {
+        margin: 20vw 5vw 5vw 5vw;
+        padding: 7vw 1vw 9vw 1vw;
+    }
+    
+    .about {
+        margin: 15vw 0 15vw 0;
+    }
+    
+    .education {
+        margin: 7vw 0 13vw 0;
+    }
+
+    .expContent_Portfolio {
+        margin: 3vw;
+    }
+
+    .contact {
+        display: flex;
+        opacity: 0;
+        transform: translateY(-70%);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 10vw;
+    }
+    
+    .contact h1{
+        margin: 9vw;
+    }
+    
+    .contact p {
+        margin: 0 0 7vw 0;
+    }
+    
+    .contact h2{
+        margin: 15vw 9vw 32vw 9vw;
+    }
+
+    .expContent {
+        margin: 2vw;
+    }
+    
+
+    .container_Portfolio p {
+        margin: 2vw;
+    }
+    
+    .portfolio p {
+        margin: 5vw;
+        align-self: center;
+    }
+
     .container:hover {
         background-color: var(--second-bg-color);
         box-shadow: 0 0 10px var(--main-color); 
-    }
-
-    .navbar {
-        position: absolute;
-        transition: height 1s ease;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
     }
 
     #scrollToTop {
@@ -737,8 +759,8 @@ section {
     }
 
     .welcome {
-        margin: 5vh 5vw 2vh 5vw;
-        padding: 5vh 1vw 5vh 1vw;
+        margin: 10vw 5vw 1vw 5vw;
+        padding: 3vw 1vw 3vw 1vw;
     }
 
     .socialsContainer button {
@@ -752,7 +774,16 @@ section {
 
     .welcomeTitleContainer {
         flex: 0;
-        margin-bottom: 2vh;
+        margin-bottom: 1vw;
+    }
+
+    .navbar {
+        position: absolute;
+        transition: height 1s ease;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
     }
 
     .navbar a {
@@ -762,6 +793,19 @@ section {
         padding: 0.2rem 2rem;
         text-decoration: none;
         transition: color 0.3s ease;
+    }
+
+    .navbar.collapsed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 2vw;
+        background-color: rgb(63, 60, 87);
+        /*backdrop-filter: blur(5px);*/
     }
 
     .header h1 {
@@ -782,18 +826,6 @@ section {
     .exitToggle {
         display: none;
         transition: all 0.5;
-    }
-
-    .navbar.collapsed {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position:fixed;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem;
-        background-color: rgb(63, 60, 87);
     }
 
     .welcome h1 {
@@ -820,7 +852,7 @@ section {
     }
 
     .slideShowContainer {
-        min-height: 40vh;
+        min-height: 70vw;
     }
 
     .slideShowContainer img {
@@ -830,7 +862,7 @@ section {
 
     .button1 {
         font-size: min(4vw, 20px);
-        padding: 4vh 20vw 4vh 20vw;
+        padding: 8vw 20vw 8vw 20vw;
         text-align: center;
         align-self: center;
         display: flex;
@@ -869,6 +901,10 @@ section {
         align-items: flex-end;
     }
 
+    .container_Portfolio:hover {
+        padding: 1.4vw;
+    }
+
     .container_Portfolio {
         align-items: flex-end;
         min-width: 20vw;
@@ -876,7 +912,7 @@ section {
     }
 
     .education img {
-        width: 5vh;
+        width: 10vw;
         height: auto;
     }
 }
