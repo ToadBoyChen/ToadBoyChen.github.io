@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="styles.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="scripts.js" defer></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
     <body>
         <header class = "header">
@@ -27,26 +29,28 @@
                 <a href="#about">About me</a>
                 <a href="#education">Education</a>
                 <a href="#portfolio">Portfolio</a>
+                <a href="#mathematics">Mathematics</a>
                 <a href="#contact">Contact</a> 
             </nav>
         </header>
         <main>
             <section id = "welcome" class = "welcome slideInDown">
-                <div class="welcomeTitleContainer">
+                <div class="welcomeTitleContainer" style="margin: 1vw;">
                     <h2>Welcome,</h2>
                     <h2>I'm a Mathematician, Computer Scientist and,</h2>
                     <h1 class = "longSlideInLeft-15"><span class = "highlighted">Programmer.</span></h1>
                 </div>
                 <div class = "paragraphContainer" style="margin: 1vw 0 0 0;">
-                    <p>I'm a Mathematician at Queen Mary's University of London, and a coding fanatic. This website is <span class = "highlighted"> coded, designed and maintained by myself.</span> I've included my projects, interests and resume below. Please enjoy my website and get in contact with me for any further details. Thank you for visiting!</p>
-                    <p>Feel free to follow me along my journey through my socials below, and get in contact with me through the contact form at the end:</p>
+                    <p>I'm a Mathematician at Queen Mary's University of London, and a coding fanatic. This website is <span class = "highlighted"> coded, designed and maintained by myself.</span> I've included my projects, interests and resume below. Please enjoy my website and contact me for any further details. Thank you for visiting!</p>
+                    <h2 style="margin: 1vw">Future Visions,</h2>
+                	<p>I hope to eventually create a mathematics dictionary here using \(\LaTeX\), with all of my notes taken during lectures and self study. This is currently a work in progress but should be my system soon enough!</p>
                 </div>
                 <div class = "socialsContainer" style = "align-self: center; margin: 2vw 0 2vw 0;">
                     <button  onclick = "window.open('https://www.instagram.com/tobychen1337/', '_blank')"><img src="Media/instagramLogo.png" alt="Instagram"></button>
                     <button  onclick="window.open('https://www.linkedin.com/in/toby-chen-167519298', '_blank')"><img src="Media/linkedinLogo.png" alt="Linkedin"></button>
                     <button  onclick="window.open('https://github.com/ToadBoyChen', '_blank')"><img src="Media/githubLogo.png" alt="Linkedin"></button>
                 </div>
-                <p style="margin: 0 0 1vw 0;">I have coded a <span class = "highlighted">large plethora of projects</span> that interest me and showcase my skills. Many have mathematical interest,</p>
+                <p style="margin: 0 0 1vw 0;">I have coded a <span class = "highlighted">large plethora of projects</span> that interest me and showcase my skills. Many have mathematical interest and emphasis,</p>
                 <h2 style = "margin: 0 0 1vw 0;">and some notable projects include:</h2>
                 <div class = "slideShowContainer">
                     <div class = "slides fade">
@@ -205,11 +209,24 @@
                     <p>All code can be found on <a href="https://github.com/ToadBoyChen" class="intractableText" target="_blank">my github</a>. Please note I'm currently in the process of uploading my code (if you can't already see it).</p>
                 </div>
             </section>
-            <section id = "contact" class = "contact" style="min-height: 80%;">
-                <h1>Contact me,</h1>
-                <p>I'd be more than happy to talk to anyone who has any enquiries or questions. If you wish to contact me, please contact me at <a class = "intractableText" onclick="copyText('toby.chen1337@outlook.com')">my email</a>, or <a class="intractableText" onclick="copyText('07714 387919')">my phone number</a>.</p>
-                <p>Or you can contact me through my social media accounts at <a class="intractableText" href="https://www.instagram.com/tobychen1337/" target="_blank">my instagram</a> or <a class="intractableText" href="https://www.linkedin.com/in/toby-chen-167519298/" target="_blank">my linkedin</a>.</p>
-                <h2 class="highlighted">Thankyou for Visiting</h2>
+            <section id="mathematics" class="mathematics">
+                <div class="mathematicsContent">
+                    <h1>Mathematics</h1>
+                    <p>This section is currently under development, however I thought I could include some mathematics that I have personal interest in.</p>
+                    <h2>Current <span class="highlighted">favorite equation</span>,</h2>
+                    <div class="mathContainer">
+                        <p class = "rainbow">\[f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}\]</p>
+                    </div>
+                    <p>The derivation was quite fun, and is the basis of the <span class="highlighted">central limit theorem</span>.</p>
+                </div>
+            </section>
+            <section id = "contact" class = "contact">
+                <div class="contactContent">
+                    <h1>Contact me,</h1>
+                    <p>I'd be more than happy to talk to anyone who has any enquiries or questions. If you wish to contact me, please contact me at <a class = "intractableText" onclick="copyText('toby.chen1337@outlook.com')">my email</a>, or <a class="intractableText" onclick="copyText('07714 387919')">my phone number</a>.</p>
+                    <p>Or you can contact me through my social media accounts at <a class="intractableText" href="https://www.instagram.com/tobychen1337/" target="_blank">my instagram</a> or <a class="intractableText" href="https://www.linkedin.com/in/toby-chen-167519298/" target="_blank">my linkedin</a>.</p>
+                    <h2 class="highlighted">Thankyou for Visiting</h2>
+                </div>
             </section>
         </main>
         <footer class = "footer">
