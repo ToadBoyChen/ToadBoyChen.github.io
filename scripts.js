@@ -1,10 +1,39 @@
+const scrollPos = window.scrollY;
+var header = document.querySelector('.header');
+var menu = this.document.querySelector('.menuToggle');
+
+const screenWidth = window.innerWidth;
+const screenHeight = window.innerHeight;
+
+if (screenHeight <= 500)
+{
+    header.style.padding = '4vh 2vh 4vh 1vh';
+    menu.style.padding = '0vw 8vw 0 1vw';
+}
+else if (screenWidth <= 1000)
+{
+    header.style.padding = '3vw 4vw 3vw 3vw';
+    menu.style.padding = '1vw 5vw 1 5vw';
+}
+else
+{
+    if (scrollPos > 500)
+    {
+        header.style.padding = '0.7vw 1.4vh 0.7vw 0.7vh';
+    }
+    else
+    {
+        header.style.padding = '2vw 4vh 2vw 2vh';
+    }
+}
+
 window.addEventListener('scroll', function() {
     var sections = document.querySelectorAll('section');
     var navLinks = document.querySelectorAll('.navbar a');
     const scrollPos = window.scrollY;
 
     sections.forEach(function(section) {
-        var top = section.offsetTop - 500;
+        var top = section.offsetTop - 400;
         var id = section.getAttribute('id');
         var activeLink = document.querySelector('.navbar a[href="#' + id + '"]');
 
@@ -18,9 +47,16 @@ window.addEventListener('scroll', function() {
 
     var header = document.querySelector('.header');
     var menu = this.document.querySelector('.menuToggle');
-    const screenWidth = window.innerWidth;
 
-    if (screenWidth <= 1000)
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    if (screenHeight <= 500)
+    {
+        header.style.padding = '4vh 2vh 4vh 1vh';
+        menu.style.padding = '0vw 8vw 0 1vw';
+    }
+    else if (screenWidth <= 1000)
     {
         header.style.padding = '3vw 4vw 3vw 3vw';
         menu.style.padding = '0vw 5vw 0 5vw';
@@ -36,6 +72,7 @@ window.addEventListener('scroll', function() {
             header.style.padding = '2vw 4vh 2vw 2vh';
         }
     }
+
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -88,10 +125,12 @@ function scrollToTop() {
 let slideIndex = 1;
 showSlides(slideIndex);
 
+// Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
+// Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
@@ -188,6 +227,7 @@ function animateAboutSection() {
     if (check > contactOffSetTop)
     {
         contactContent.classList.add("show");
+        console.log("Here");
     }
 }
 
