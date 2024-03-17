@@ -227,7 +227,6 @@ function animateAboutSection() {
     if (check > contactOffSetTop)
     {
         contactContent.classList.add("show");
-        console.log("Here");
     }
 }
 
