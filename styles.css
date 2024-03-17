@@ -41,6 +41,7 @@ ul {
 
 p {
     font-size: min(3vw, 20px);
+    margin: 2vw;
 }
 
 h1 {
@@ -99,6 +100,12 @@ h2 {
     font-weight: bold;
 }
 
+.highlighted-red {
+    color: rgb(255, 0, 0);
+    text-shadow: 0 0 0.3rem rgb(255, 145, 145);
+    font-weight: bold;
+}
+
 .hidden {
     opacity: 0;
 }
@@ -134,9 +141,11 @@ h2 {
 .collapsed .menuIcon {
     display: none;
 }
+
 .collapsed .exitButton {
     display: inline-block;
 }
+
 .collapsed .navbar {
     display: none;
 }
@@ -188,10 +197,6 @@ h2 {
     flex-direction: column;
     padding: 1.4vw;
     border-radius: 10px;
-}
-
-.container:hover {
-    padding: 2vw;
 }
 
 .container_Portfolio {
@@ -254,6 +259,7 @@ h2 {
 
 .container:hover {
     box-shadow: 0 0 2rem var(--imp-color);
+    padding: 2vw;
 }
 
 .expContent {
@@ -315,12 +321,13 @@ h2 {
     background-color: var(--imp-color);
     box-shadow: 0 0 0.9rem var(--imp-color);
     box-shadow: 0 0 10px rgba(255, 225, 0, 0.7); 
+    padding: 0.7vw;
 }
 
 .socialsContainer button img {
     opacity: 0.8;
     width: 3.5vw;
-    height: auto;
+    height: 3.5vw;
     align-self: center;
 }
 
@@ -430,11 +437,15 @@ h2 {
     animation: rainbowAnimation 2s linear infinite;
 }
 
+.smaller {
+    font-size: 1rem;
+}
+
 .mathContainer {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     background-color: var(--second-bg-color);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .2);
-    padding: 2vw 4vw 2vw 4vw;
+    padding: 2vw 8vw 2vw 8vw;
     border-radius: 10px;
     margin: 2vw;
 }
@@ -504,7 +515,7 @@ h2 {
 .contactContent {
     opacity: 0;
     transform: translateX(-70%);
-    margin: 2vw;
+    margin: 5vw;
     transition: all 1s ease;
 }
 
@@ -535,12 +546,14 @@ h2 {
 }
 
 .slideShowContainer {
-    min-height: 80%;
+    min-height: 60%;
     margin: auto;
     display: flex;
     align-items: center;
     align-self: center;
-    padding: 1vw 15vw 1vw 15vw;
+    align-content: center;
+    padding: 1vw 25vw 1vw 25vw;
+    margin: 5vw 0vw 5vw 0vw;
     border-radius: 10px;
     box-shadow: 0 4px 8px #000000;
     background-color: var(--second-bg-color);
@@ -562,11 +575,12 @@ h2 {
     color: var(--int-color);
     text-shadow: 0 0 0.5rem var(--int-color);
     font-weight: bold;
+    font-size: min(60px, 9vw);
     transition: all 1s ease;
     user-select: none;
+    -webkit-user-select: none;
     width: auto;
     padding: 2vw;
-    font-size: 2rem;
 }
 
 .next {
@@ -728,7 +742,118 @@ section {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) and (orientation: landscape) {
+
+    p {
+        font-size: min(17px, 2vw);
+    }
+
+    .navbar.collapsed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 2vw;
+        background-color: rgb(63, 60, 87);
+    }
+
+    .navbar {
+        position: absolute;
+        transition: height 1s ease;
+        display: none;
+        overflow: hidden;
+    }
+
+    .header {
+        padding: 2vw 0 2vw 0;
+    }
+
+    .logo {
+        width: 5vw; height: auto;
+        margin: 0vw 2vw 0vw 2vw;
+    }
+
+    .socialsContainer button {
+        padding: 1vw;
+    }
+
+    .socialsContainer button:hover {
+        padding: 1vw;
+    }
+
+    .container_Portfolio:hover {
+        padding: 1.4vw;
+    }
+
+    .education img {
+        display: none;
+    }
+
+    .education {
+        background-color: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin: 3vh 0 9vh 0;
+        opacity: 0;
+        transform: translateX(-70%);
+        transition: all 1s ease;
+    }
+
+    h1 {
+        font-size: min(40px, 5vw);
+    }
+
+    h2 {
+        font-size: min(30px, 4vw);
+    }
+
+    .portfolio p {
+        display: none;
+    }
+
+    .portfolio h2 {
+        font-size: min(20px, 4vw);
+    }
+
+    .portfolio h1 {
+        font-size: min(30px, 4vw);
+    }
+
+    .portfolio img {
+        width: 12vw;
+        height: 12vw;
+    }
+
+    .education h2 {
+        font-size: min(20px, 5vw);
+    }
+
+    .education h1 {
+        font-size: min(30px, 6vw);
+    }
+
+    .container:hover {
+        background-color: var(--second-bg-color);
+        box-shadow: 0 0 10px var(--main-color); 
+    }
+
+    .slideShowContainer {
+        padding: 0.5vw 20vw 0.5vw 20vw;
+    }
+    
+}
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+
+    p {
+        margin: 5vw;
+    }
 
     .mathematics {
         margin: 5vw 0 5vw 0;
@@ -821,8 +946,14 @@ section {
         border-radius: 7px;
     }
 
+    .socialsContainer button:hover {
+        padding: 1vw 1.2vw 1vw 1.2vw;
+        border-radius: 7px;
+    }
+
     .socialsContainer button img {
         width: min(50px, 10vw);
+        height: min(50px, 10vw);
     }
 
     .welcomeTitleContainer {
@@ -834,8 +965,6 @@ section {
         position: absolute;
         transition: height 1s ease;
         display: none;
-        justify-content: center;
-        align-items: center;
         overflow: hidden;
     }
 
@@ -872,7 +1001,7 @@ section {
     .menuToggle {
         display: block;
         opacity: 1;
-        transition: all 0.5;
+        transition: all 0.5s;
     }
 
     .exitToggle {
@@ -903,13 +1032,13 @@ section {
         font-size: 0.8rem;
     }
 
-    .slideShowContainer {
-        min-height: 70vw;
-    }
-
     .slideShowContainer img {
         width: 45vw;
-        height: auto;
+        height: 45vw;
+    }
+
+    .slideShowContainer {
+        padding: 4vw 15vw 4vw 15vw;
     }
 
     .button1 {
@@ -958,9 +1087,15 @@ section {
     }
 
     .container_Portfolio {
-        align-items: flex-end;
+        align-items: center;
         min-width: 20vw;
         justify-content: space-around;
+    }
+
+    .contentGrouper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .education img {
