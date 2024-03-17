@@ -6,7 +6,7 @@
         <meta http-equiv="cache-control" content="no-cache">
         <meta http-equiv="expires" content="0">
         <meta http-equiv="pragma" content="no-cache">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Toby Chen</title>
         <link rel="stylesheet" href="styles.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -40,7 +40,7 @@
                     <h2>I'm a Mathematician, Computer Scientist and,</h2>
                     <h1 class = "longSlideInLeft-15"><span class = "highlighted">Programmer.</span></h1>
                 </div>
-                <div class = "paragraphContainer" style="margin: 1vw 0 0 0;">
+                <div class = "paragraphContainer">
                     <p>I'm a Mathematician at Queen Mary's University of London, and a coding fanatic. This website is <span class = "highlighted"> coded, designed and maintained by myself.</span> I've included my projects, interests and resume below. Please enjoy my website and contact me for any further details. Thank you for visiting!</p>
                     <h2 style="margin: 1vw">Future Visions,</h2>
                 	<p>I hope to eventually create a mathematics dictionary here using \(\LaTeX\), with all of my notes taken during lectures and self study. This is currently a work in progress but should be my system soon enough!</p>
@@ -50,8 +50,8 @@
                     <button  onclick="window.open('https://www.linkedin.com/in/toby-chen-167519298', '_blank')"><img src="Media/linkedinLogo.png" alt="Linkedin"></button>
                     <button  onclick="window.open('https://github.com/ToadBoyChen', '_blank')"><img src="Media/githubLogo.png" alt="Linkedin"></button>
                 </div>
-                <p style="margin: 0 0 1vw 0;">I have coded a <span class = "highlighted">large plethora of projects</span> that interest me and showcase my skills. Many have mathematical interest and emphasis,</p>
-                <h2 style = "margin: 0 0 1vw 0;">and some notable projects include:</h2>
+                <p>I have coded a <span class = "highlighted">large plethora of projects</span> that interest me and showcase my skills. Many have mathematical interest and emphasis,</p>
+                <h2>and some notable projects include:</h2>
                 <div class = "slideShowContainer">
                     <div class = "slides fade">
                         <div class = "slideText">
@@ -64,9 +64,9 @@
                     </div>
                     <div class = "slides fade">
                         <div class = "slideText">
-                            Chess Bot
+                            Auto Trader
                         </div>
-                        <img src = "Media/chess.gif" alt = "Chess Bot">
+                        <img src = "Media/stock.gif" alt = "Chess Bot">
                         <div class = "numberText">
                             2 / 3
                         </div>
@@ -177,33 +177,39 @@
                             <h2>Fractal Generator</h2>
                             <p>Coded in <span class="highlighted-dark">Python</span> using numpy, matplotlib.</p>
                             <img src="Media/fractal.gif" alt="fractals">
+                            <p class="highlighted-red">In Progress</p>
                         </div>
                         <div class="container_Portfolio">
                             <h2>Chess Bot</h2>
                             <p>Coded in <span class="highlighted-dark">Python</span> and runs in the console.</p>
                             <img src="Media/chess.gif" alt="chess">
+                            <p class="highlighted-red">In Progress</p>
                         </div>
                         <div class="container_Portfolio">
                             <h2>Path Finding</h2>
                             <p>Coded in <span class="highlighted-dark">C#</span> and runs in the console.</p>
                             <img src="Media/pathFinding.gif" alt="path finding">
+                            <p class="highlighted-red">In Progress</p>
                         </div>
                     </div>
                     <div class = "contentGrouper">
                         <div class="container_Portfolio">
                             <h2>Password Brute Forcing</h2>
-                            <p>Console <span class="highlighted-dark">Python</span> application.</p>
+                            <p>Console <span class="highlighted-dark">Python</span> application to brute force passwords.</p>
                             <img src="Media/hack.gif" alt="Password Hack">
+                            <p class="highlighted-red">In Progress</p>
                         </div>
                         <div class="container_Portfolio">
-                            <h2>Particle Collision</h2>
-                            <p>Coded in <span class="highlighted-dark">C#</span> and uses window forms.</p>
-                            <img src="Media/particle.gif" alt="Particle Simulator">
+                            <h2>Auto Trader</h2>
+                            <p>Coded in <span class="highlighted-dark">Python</span>, uses APIs and predicts buy in and sell.</p>
+                            <img src="Media/stock.gif" alt="Particle Simulator">
+                            <p class="highlighted-red">In Progress</p>
                         </div>
                         <div class="container_Portfolio">
                             <h2>Calculus Calculator</h2>
                             <p>Coded in <span class="highlighted-dark">Python</span> and runs in the console.</p>
                             <img src="Media/calculus.gif" alt="Calculus Calculator">
+                            <p class="highlighted-red">In Progress</p>
                         </div>
                     </div>
                     <p>All code can be found on <a href="https://github.com/ToadBoyChen" class="intractableText" target="_blank">my github</a>. Please note I'm currently in the process of uploading my code (if you can't already see it).</p>
@@ -212,12 +218,20 @@
             <section id="mathematics" class="mathematics">
                 <div class="mathematicsContent">
                     <h1>Mathematics</h1>
-                    <p>This section is currently under development, however I thought I could include some mathematics that I have personal interest in.</p>
+                    <p>This section is currently under development and will, in the future, contain all of my lecture notes and mathematical documents as a form of central storage.</p>
                     <h2>Current <span class="highlighted">favorite equation</span>,</h2>
                     <div class="mathContainer">
-                        <p class = "rainbow">\[f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}\]</p>
+                        <p class = "rainbow"><span class="smaller">The Normal Distribution:</span>\[f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}\]</p>
                     </div>
-                    <p>The derivation was quite fun, and is the basis of the <span class="highlighted">central limit theorem</span>.</p>
+                    <p>Basis of the <span class="highlighted">central limit theorem</span>.</p>
+                    <p>I currently have personal interest in <span class="highlighted">Algebra</span> due to the formation and functionality of groups, rings and fields. These abstract concepts have piqued my curiosity and is my current favorite module, due to the level of abstraction.</p>
+                    <p>I have also enjoyed <span class="highlighted">axiomatizing the probability function</span>.</p>
+                    <h2>Axioms: <span class="highlighted">Kolmogorov's Axioms</span>,</h2>
+                    <div class="mathContainer">
+                        <p class = ""><span class="smaller">Positivity:</span> \[\forall~E\in\Omega~\exists~\mathbb{P}(E)\geq 0.\]</p>
+                        <p class = ""><span class="smaller">Normalization:</span> \[\mathbb{P}(\Omega)=1.\]</p>
+                        <p class = ""><span class="smaller">Additivity:</span> \[\mathbb{P}\left(\bigcup_{i = 0}^{\infty}(E_i)\right)=\sum_{i=1}^{\infty}(\mathbb{P}(E_i)).\]</p>
+                    </div>
                 </div>
             </section>
             <section id = "contact" class = "contact">
