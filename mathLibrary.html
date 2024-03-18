@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="expires" content="0">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mathematics Library</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles_Mathematics.css">
+        <link rel="icon" href="Media/logo.ico" type="image/x-icon">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="scripts_Mathematics.js" defer></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <header class = "header">
+            <img src="Media/logo.svg" alt="Logo" class = "logo"></img>
+            <div class = "titleContainer">
+                <h1>Toby Chen - Mathematics Library</h1>
+            </div>
+        </header>
+        <main>
+            <div class="mathPage">
+                <section class="intro">
+                    <h1>Welcome to the <span class="highlighted">Mathematics Library Page</span>!</h1>
+                    <p>This page contains all my notes and mathematical interests and acts as a centralized location for me to store my content for the following years of my university education. This is free to use and open to anyone who feels the need to use content.</p>
+                    <p>All mathematics here is likely to be at a minimum of university level, however someone may request something specific.</p>
+                    <h1 class="highlighted-red" style="position: fixed; bottom: 40px;">THIS IS CURRENTLY UNDER DEVELOPMENT</h1>
+                </section>
+                <section class="firstYear">
+                    <h1>First Year Content</h1>
+                    <div class = "algebra subDivider container-pdf" onclick="toggleContent(this)">
+                        <h2>Algebra</h2>
+                        <div class="expContent">
+                            <div class="group">
+                                <h3>Algebra Lecture Notes</h3>
+                                <embed src="Mathematics/algebra_LN_NOTFINISED.pdf">
+                            </div>
+                            <div class="group">
+                                <h3>Algebra Notes</h3>
+                                <embed src="Mathematics/algebra_LN_NOTFINISED.pdf">
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "realAnalysis subDivider">
+                        <h2>Real Analysis</h2>
+                    </div>
+                    <div class = "appliedProb subDivider">
+                        <h2>Applied Probabilities and Statistics</h2>
+                    </div>
+                    <div class = "basicMathematicalNotions subDivider">
+                        <h2>Basic Mathematical Notions</h2>
+                    </div>
+                    <div class = "vectorsMatrices subDivider">
+                        <h2>Vectors and Matrices</h2>
+                    </div>
+                </section>
+                <section class="secondYear">
+                    <h1>Second Year Content</h1>
+                </section>
+                <section class="thirdYear">
+                    <h1>Third Year Content</h1>
+                </section>
+            </main>
+            <footer class = "footer">
+                <p>2024 - Toby Chen - Last Updated: 11/03/2024 - Icons from <a class = "intractableText" href = "https://www.flaticon.com" target="_blank">flaticon</a>.</p>
+                <button id="scrollToTop" onclick="scrollToTop()"><img src="Media/upArrowBg.png" alt="Up Arrow" class = "upArrow"></img></button>
+            </footer>
+            </div>
+    </body>
+</html>
