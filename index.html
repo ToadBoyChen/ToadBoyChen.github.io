@@ -1,256 +1,288 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="cache-control" content="no-cache">
-        <meta http-equiv="expires" content="0">
-        <meta http-equiv="pragma" content="no-cache">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Portfolio</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="Media/logo.ico" type="image/x-icon">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="scripts.js" defer></script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    </head>
-    <body>
-        <header class = "header">
-            <img src="Media/logo.svg" alt="Logo" class = "logo"></img>
-            <div class = "titleContainer">
-                <h1>Toby Chen</h1>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Toby Chen's Portfolio</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <link rel="stylesheet" href="style-main.css">
+            <link rel="stylesheet" href="style-nav.css">
+            <link rel="stylesheet" href="style-cursor.css">
+            <link rel="stylesheet" href="style-classes.css">
+            <link rel="stylesheet" href="style-sections.css">
+            <link rel="stylesheet" href="style-keyframes.css">
+            <link rel="stylesheet" href="style-theme.css">
+            <link rel="stylesheet" href="style-load.css">
+            <link rel="stylesheet" href="style-card.css">
+            <link rel="stylesheet" href="style-tiny.css">
+            <link rel="stylesheet" href="style-small.css">
+            <link rel="stylesheet" href="style-medium.css">
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+            <script src="script.js"></script>
+        </head>
+        <body class="body Background">
+            <!-- <div class="popup-overlay" id="popup">
+                <div class="popup-content">
+                    <p>This website is currently a work in progress.</p>
+                    <p>I have just started to develop it so please excuse all of the errors and unfinished aspects.</p>
+                    <p>Check back soon !</p>
+                    <p>(Click off this pop up to remove it)</p>
+                </div>
+            </div> -->
+            <div class="Background-load" id="loading-overlay">
+                <!-- <div class="terminal-loader">
+                    <div class="terminal-header">
+                        <div class="terminal-title">Status</div>
+                        <div class="terminal-controls">
+                            <div class="control close"></div>
+                            <div class="control minimize"></div>
+                            <div class="control maximize"></div>
+                        </div>
+                    </div>
+                    <div class="text">Loading...</div>
+                </div>               -->
             </div>
-            <button class="menuToggle">
-                <img class="menuIcon" src="Media/menuIcon.png" alt="Menu Icon" style = "width: 7vw; height: auto; display: inline-block;"></img>
-                <img class="exitButton" src="Media/exitIcon.png" alt="Exit Icon" style = "width: 7vw; height: auto; display: none;"></img>
-            </button>
-            <nav class = "navbar">                
-                <a href="#welcome" class = "active1">Welcome</a>
-                <a href="#about">About me</a>
-                <a href="#education">Education</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#mathematics">Mathematics</a>
-                <a href="#contact">Contact</a> 
+            <nav class="navbar navbar-fixed-bottom navbar-inverse blur" style="z-index: 50;">  
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand hoverable solid" href="#welcome">Toby Chen</a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>                        
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active hoverable"><a href="#welcome">Welcome</a></li>
+                            <li class="hoverable"><a href="#about">About Me</a></li>
+                            <li class="hoverable"><a href="#portfolio">Portfolio</a></li>
+                            <li class="hoverable"><a href="#work">Work</a></li>
+                            <li class="hoverable"><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
-        </header>
-        <main>
-            <section id = "welcome" class = "welcome slideInDown">
-                <div class="welcomeTitleContainer" style="margin: 1vw;">
-                    <h2>Welcome,</h2>
-                    <h2>I'm a Mathematician, Computer Scientist and,</h2>
-                    <h1 class = "longSlideInLeft-15"><span class = "highlighted">Programmer.</span></h1>
-                </div>
-                <div class = "paragraphContainer">
-                    <p>
-                        As a Mathematician at Queen Mary's University of London and a coding enthusiast, this website is <span class="highlighted">coded, designed, and maintained by myself</span>. Below, you'll find my projects, interests, and resume. Please enjoy my website, and contact me for any further details. Thank you for visiting!</p>
-                    <h2 style="margin: 1vw">Future Visions,</h2>
-                	<p>I hope to eventually create a mathematics dictionary here using \(\LaTeX\), with all of my notes taken during lectures and self study. This is currently a work in progress but should be my system soon.</p>
-                </div>
-                <div class = "socialsContainer" style = "align-self: center; margin: 2vw 0 2vw 0;">
-                    <button  onclick = "window.open('https://www.instagram.com/tobychen1337/', '_blank')"><img src="Media/instagramLogo.png" alt="Instagram"></button>
-                    <button  onclick="window.open('https://www.linkedin.com/in/toby-chen-167519298', '_blank')"><img src="Media/linkedinLogo.png" alt="Linkedin"></button>
-                    <button  onclick="window.open('https://github.com/ToadBoyChen', '_blank')"><img src="Media/githubLogo.png" alt="Linkedin"></button>
-                </div>
-                <p>I have coded a <span class = "highlighted">large plethora of projects</span> that interest me. Many have mathematical interest and emphasis,</p>
-                <h2>and some notable projects include:</h2>
-                <div class = "slideShowContainer">
-                    <div class = "slides fade">
-                        <div class = "slideText">
-                            Fractals
+            <!-- <div class="themeContainer">
+                <div class="theme-switch hoverable">
+                    <input type="checkbox" id="theme-checkbox" />
+                    <label for="theme-checkbox">
+                        <div></div>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"></path>
+                            </svg>
+                        </span>
+                    </label>
+                </div>      
+            </div> -->
+            <section id="welcome">
+                <div class="col-sm-12 container-welcome-1 shadow">
+                    <h4 class="wordCarousel">
+                        <span>Hey there and Welcome, I'm </span>
+                        <div>
+                            <ul class="flip5">
+                                <li>a Kickboxer</li>
+                                <li>a Programmer</li>
+                                <li>a Student</li>
+                                <li>a Mathematician</li>
+                                <li>Toby Chen</li>
+                            </ul>
                         </div>
-                        <img src = "Media/fractal.gif" alt = "Fractals">
-                        <div class = "numberText">
-                            1 / 3
-                        </div>
-                    </div>
-                    <div class = "slides fade">
-                        <div class = "slideText">
-                            Auto Trader
-                        </div>
-                        <img src = "Media/stock.gif" alt = "Chess Bot">
-                        <div class = "numberText">
-                            2 / 3
-                        </div>
-                    </div>
-                    <div class = "slides fade">
-                        <div class = "slideText">
-                            Path Finding
-                        </div>
-                        <img src = "Media/pathFinding.gif" alt = "Path Finding">
-                        <div class = "numberText">
-                            3 / 3
-                        </div>
-                    </div>
-                    <a class="next" onclick="plusSlides(1)">></a>
-                    <a class="prev" onclick="plusSlides(-1)">< </a>
+                    </h4>
+                    <button class="scrollPrompt">Scroll Down</button>
                 </div>
-            </section>
-            <section id = "about" class = "about">
-                <div class = "aboutContent">
-                    <h1 style = "margin: 2vw;">About <span class = "highlighted">me,</span></h1>
-                    <p style = "margin: 2vw;"><span class="highlighted">Current maths undergrad </span>at Queen Mary's University of London</span>, with specific interests in <span class="highlighted">cryptography, programming, and mathematics</span>. I'm also a Kickboxer competing nationally three times, a rugby player representing QMRFC 1st team, and a music enthusiast playing the electric guitar for over 5 years.</p>
-                    <div class="container_about">
-                        <div class="expContent" style="box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);">
-                            <p><span class="highlighted-dark">Longtime programmer</span>, with no professional experience but have coded many projects for fun such as <span class="highlighted-dark">a chess bot, password brute-forcing algorithm, pathfinding algorithms, and a fractal generator</span>. I've used a multitude of languages including <span class="highlighted-dark">Python, Java, C#</span>, and many more. I have a genuine passion for programming and had great fun coding this website, and I will continue improving it. I'm also a <span class="highlighted-dark">passionate mathematician</span>, evidenced by my pursuit of a mathematics degree. I hope to incorporate mathematics onto this website, perhaps by uploading all my notes here? This idea has yet to be explored, but please check in to see progress.</p>
-                            <br></br>
-                            <p>This website will receive regular updates as my coding abilities increase, and I hope to create a <span class="highlighted-dark">mathematical database on here with LaTeX</span> incorporated using APIs. Additionally, I have a <span class="highlighted-dark">keen interest in the financial sector</span>. This website was made using <span class="highlighted-dark">HTML, CSS, JavaScript, and JQuery</span>, and serves to display my abilities as a front-end programmer and designer, showcasing my achievements and aspirations.</p>
+                <div class="col-sm-8 container-welcome-2 FLYIN-1">
+                    <div class="target">
+                    </div>
+                    <h1>Who am I?</h1>     
+                    <p class="skills">UG Mathematics | Looking to start professional career | Athlete | Kickboxer</p>
+                    <p><a href="https://www.qmul.ac.uk" target="_blank" class="link-text">Queen Mary's University of London</a> | <a href="https://www.ukshaolin.com" target="_blank" class="link-text">UK Shaolin Center</a></p>
+                    <p>I'm a Mathematics student at Queen Mary's University of London looking to join the professional teach world. This website showcases what makes me a special and strong Programmer, Mathematician and problem solver.</p>  
+                    <h2>Services</h2>
+                    <p class="skills">Web Development | Algorithm Design | Internships | Paid Work | Volunteering</p>
+                    <p>Though I'm new to programming I'm always more than happy to help develop anything tech related, from web development (fullstack) to software development.</p>
+                    <p>I'm willing to work for free in order to gain experience, and on projects that may not require coding. I'm a problem-solver and student at my core, and would love to contribute some real work.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h1>Fun Facts</h1>
+                    <h2>Hobbies</h2>
+                    <p>I am a national Kickboxer, play from QMRFC 1st team and practice Muay Thai.</p>
+                    <p>I also play the guitar regularly and am really into games like Rainbow Six Siege and Chess.</p>
+                    <h2>Talents</h2>
+                    <p>1. Programming</p>
+                    <p>2. Analytical Skills</p>
+                    <p>3. Mathematical Skills</p>
+                    <p>4. Problem solving</p>
+                    <p>5. Team player</p>
+                    <h2>Languages</h2>
+                    <p>English - native language</p>
+                    <p>Chinese Mandarin - intermediate</p>
+                </div>
+                <div class="col-sm-12 center">
+                    <div class="card">
+                        <div class="header-skills">My Skills</div>
+                        <div class="body">
+                            <div class="skill">
+                                <div class="skill-name">HTML</div>
+                                <div class="skill-level">
+                                    <div class="skill-percent" style="--percentage: 70%"></div>
+                                </div>
+                                <div class="skill-percent-number">70%</div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-name">R</div>
+                                <div class="skill-level">
+                                    <div class="skill-percent" style="--percentage: 65%"></div>
+                                </div>
+                                <div class="skill-percent-number">65%</div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-name">C#</div>
+                                <div class="skill-level">
+                                    <div class="skill-percent" style="--percentage: 75%"></div>
+                                </div>
+                                <div class="skill-percent-number">75%</div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-name">Python</div>
+                                <div class="skill-level">
+                                    <div class="skill-percent" style="--percentage: 90%"></div>
+                                </div>
+                                <div class="skill-percent-number">90%</div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-name">Java</div>
+                                <div class="skill-level">
+                                    <div class="skill-percent" style="--percentage: 85%"></div>
+                                </div>
+                                <div class="skill-percent-number">85%</div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-name">SQL</div>
+                                <div class="skill-level">
+                                    <div class="skill-percent" style="--percentage: 56%"></div>
+                                </div>
+                                <div class="skill-percent-number">56%</div>
+                            </div>
                         </div>
-                        <div class = "button1" onclick = "toggleContent_About(this)">Read More</div>
-                    </div>
-                </div>
-            </section>
-            <section id = "education" class = "education">
-                <h1>Education</h1>
-                <div class="container" onclick="toggleContent(this)">
-                    <div class = "containerHeader">
-                        <img src="Media/priestlands_logo.png" alt="Priestlands School">
-                        <h2>Priestlands School</h2>
-                    </div>
-                    <div class="expContent">
-                        <p style="margin: 0 0 0.5vw 0;">Located in Lymington, Hampshire, England, Priestlands is a co-educational comprehensive school that I attended from <span class="highlighted-dark">2015 - 2020</span>, during which I completed 10 GCSEs and engaged in various extracurricular activities, most notably participating in their rugby and basketball teams. Priestlands is where I was <span class="highlighted-dark">first introduced to Python and networking</span> in year 9 (age 14).</p>
-                        <h2>5 Years</h2>
-                        <h2 style="margin: 0 0 0.5vw 0;">10 Subjects, those being:</h2>
-                        <ul>
-                            <li>Mathematics - grade <span class="highlighted-dark"> 8</span></li>
-                            <li>Biology - grade <span class="highlighted-dark"> 8</span></li>
-                            <li>Chemistry - grade <span class="highlighted-dark"> 7</span></li>
-                            <li>Physics - grade <span class="highlighted-dark"> 6</span></li>
-                            <li>Computer Science - grade <span class="highlighted-dark"> 6</span></li>
-                            <li>Geography - grade <span class="highlighted-dark"> 6</span></li>
-                            <li>Music - grade <span class="highlighted-dark"> 5</span></li>
-                            <li>English Language - grade <span class="highlighted-dark"> 5</span></li>
-                            <li>English Literature - grade <span class="highlighted-dark"> 5</span></li>
-                            <li>Fine Art - grade <span class="highlighted-dark"> 4</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="container" onclick="toggleContent(this)">
-                    <div class = "containerHeader">
-                        <img src="Media/brockenhurst_logo.png" alt="Brockenhurst College">
-                        <h2>Brockenhurst College</h2>
-                    </div>
-                    <div class="expContent">
-                        <p style="margin: 0 0 0.5vw 0;">Located in Brockenhurst, Hampshire, England, Brockenhurst College is a sixth form college for ages 16 and onwards, which I attended from <span class="highlighted-dark">2020 - 2022</span>. During my time there, I undertook 3 A levels and 1 GCSE (which I did not complete), and gained a <span class="highlighted-dark">comprehensive understanding of C# and advanced level Mathematics</span>. Additionally, I was a sport scholar, participating in the <span class="highlighted-dark">TASS scheme</span>.</p>
-                        <h2>2 Years</h2>
-                        <h2 style="margin: 0 0 0.5vw 0;">4 Subjects, those being:</h2>
-                        <ul>
-                            <li>A level Mathematics - grade <span class="highlighted-dark"> C</span></li>
-                            <li>A level Biology - grade <span class="highlighted-dark"> B</span></li>
-                            <li>A level Computer Science - grade <span class="highlighted-dark"> B</span></li>
-                            <li>GCSE Chinese (Mandarin) - <span class="highlighted-dark">predicted </span>grade <span class="highlighted-dark"> 7</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="container" onclick="toggleContent(this)">
-                    <div class = "containerHeader">
-                        <img src="Media/hwu_logo.png" alt="Heriot Watt University">
-                        <h2>Heriot Watt University</h2>
-                    </div>
-                    <div class="expContent">
-                        <p style="margin: 0 0 0.5vw 0;">Renowned public research university based in Edinburgh, Scotland, Heriot-Watt University is known for its <span class="highlighted-dark">strong reputation in various fields, particularly in engineering, business, mathematics, computer science, and the physical sciences</span>. I attended for a foundation year, where I completed their Mathematics and Computer Science foundation degree. During this time, I gained a deeper understanding of <span class="highlighted-dark">mathematics, with the foundation focusing on calculus and elementary number theory</span>. Additionally, I was a sports scholar for Kickboxing and participated in basketball and boxing sessions at the university.</p>
-                        <h2>1 Year</h2>
-                        <h2 style="margin: 0 0 0.5vw 0;">1 Subject, being:</h2>
-                        <ul>
-                            <li>A foundation in Mathematics, Physics and Computer Science - grade <span class="highlighted-dark"> 1st, 77%</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="container" onclick="toggleContent(this)">
-                    <div class = "containerHeader">
-                        <img src="Media/qmul_logo.png" alt="Queen Mary's University of London">
-                        <h2>Queen Mary's University of London</h2>
-                    </div>
-                    <div class="expContent">
-                        <p style="margin: 0 0 0.5vw 0;">Queen Mary University of London (QMUL) is a leading public research university located in London, England, regarded for its research-intensive environment and academic excellence across various disciplines. The university is <span class="highlighted-dark">particularly renowned for its strengths in the fields of medicine, dentistry, law, economics, mathematics, computer science, engineering, humanities, and social sciences</span>. As a current student here at QMUL, completing my Mathematics degree, I have already learned an immense amount of mathematics and programming skills. I <span class="highlighted-dark">particularly enjoyed our "Introduction to Algebra" course</span>, which provided my first taste of proper pure mathematics. Here, I aim to develop many transferable skills and apply them to the real world through projects, such as this website. I intend to <span class="highlighted-dark">work within the programming, cybersecurity, and IT industry</span>. Additionally, I am a current member of Queen Mary's student union, playing for the 1st QMRFC team, and participating in Muay Thai.</p>
-                        <h2>3 Years</h2>
-                        <h2 style="margin: 0 0 0.5vw 0;">1 Subject, being:</h2>
-                        <ul>
-                            <li>Mathematics BSc with Hons - grade <span class="highlighted-dark">Pending</span></li>
-                        </ul>
-                    </div>
+                    </div> 
+                </div>  
+                <div class="col-sm-12 container-welcome-3 shadow">
+                    <div class="shine">THANKS FOR VISITING!</div>
                 </div>
             </section>
-            <section id = "portfolio" class = "portfolio">
-                <div class="portfolioContent" style="margin: 2vw;">
-                    <h1 style="align-self: center;">Portfolio</h1>
-                    <div class = "contentGrouper">
-                        <div class="container_Portfolio">
-                            <h2>Fractal Generator</h2>
-                            <p>Coded in <span class="highlighted-dark">Python</span> using numpy, matplotlib.</p>
-                            <img src="Media/fractal.gif" alt="fractals">
-                            <p class="highlighted-red">In Progress</p>
-                        </div>
-                        <div class="container_Portfolio">
-                            <h2>Chess Bot</h2>
-                            <p>Coded in <span class="highlighted-dark">Python</span> and runs in the console.</p>
-                            <img src="Media/chess.gif" alt="chess">
-                            <p class="highlighted-red">In Progress</p>
-                        </div>
-                        <div class="container_Portfolio">
-                            <h2>Path Finding</h2>
-                            <p>Coded in <span class="highlighted-dark">C#</span> and runs in the console.</p>
-                            <img src="Media/pathFinding.gif" alt="path finding">
-                            <p class="highlighted-red">In Progress</p>
-                        </div>
-                    </div>
-                    <div class = "contentGrouper">
-                        <div class="container_Portfolio">
-                            <h2>Password Brute Forcing</h2>
-                            <p>Console <span class="highlighted-dark">Python</span> application to brute force passwords.</p>
-                            <img src="Media/hack.gif" alt="Password Hack">
-                            <p class="highlighted-red">In Progress</p>
-                        </div>
-                        <div class="container_Portfolio">
-                            <h2>Auto Trader</h2>
-                            <p>Coded in <span class="highlighted-dark">Python</span>, uses APIs and predicts buy in and sell.</p>
-                            <img src="Media/stock.gif" alt="Particle Simulator">
-                            <p class="highlighted-red">In Progress</p>
-                        </div>
-                        <div class="container_Portfolio">
-                            <h2>Calculus Calculator</h2>
-                            <p>Coded in <span class="highlighted-dark">Python</span> and runs in the console.</p>
-                            <img src="Media/calculus.gif" alt="Calculus Calculator">
-                            <p class="highlighted-red">In Progress</p>
-                        </div>
-                    </div>
-                    <p>All code can be found on <a href="https://github.com/ToadBoyChen" class="intractableText" target="_blank">my github</a>. Please note I'm currently in the process of uploading my code (if you can't already see it).</p>
+            <section id="about">
+                <div class="col-sm-12 container-about-1">
+                    <h1>About Me</h1>
+                    <p class="skills">Sports | Mathematics | Coding | Music | Games | Reading | Business</p>
+                    <p>I'm a current undergraduate in Mathematics at Queen Mary's University of London looking to start a professional career and make a difference. I'm really open to explore different types of work in different industries, I just want to learn.</p>
+                    <p>I stay active and fit all time throughout the year, as I have found great benefits, not only physically but also mentally. I value health and hope to continuously improve mine. I aspire to become at least a semi-pro fighter some day.</p>
+                </div>
+                <div class="col-sm-12 container-about-1">
+                    <h1>Education</h1>
+                    <h3>Priestlands School</h3>
+                    <p class="skills">Mathematics | Computer Science | Biology | Chemistry | Physics | English Lang | English Lit | Geography | Music | Fine Art</p>
+                    <a class = "link-text" href="https://www.priestlands.hants.sch.uk" target="_blank">Priestlands School</a>
+                    <p>Leading educational institution in Lymington, Hampshire, UK, offering comprehensive education for ages 11-16. Known for academic excellence, holistic development, and diverse extracurricular opportunities.</p>
+                    <h3>Brockenhurst College</h3>
+                    <p class="skills">Chinese Mandarin | Mathematics | Computer Science | Biology</p>
+                    <a class = "link-text" href="https://www.brock.ac.uk" target="_blank">Brockenhurst College</a>
+                    <p>A renowned further education college located in Brockenhurst, Hampshire, UK. Offering a wide range of courses for students aged 16 and above, including A-levels, vocational qualifications, apprenticeships, and adult education programs. Known for its high standards of teaching, excellent facilities, and supportive learning environment.</p>
+                    <h3>Heriot-Watt University</h3>
+                    <p class="skills">CertHE in Computer Science and Mathematics</p>
+                    <a class = "link-text" href="https://www.hw.ac.uk" target="_blank">Heriot-Watt University</a>
+                    <p>A prestigious institution based in Edinburgh, Scotland, with campuses in other locations including Dubai and Malaysia. Known for its strong emphasis on research and innovation, Heriot-Watt offers a wide range of undergraduate and postgraduate programs across various disciplines including engineering, business, science, and the arts. Renowned for its global outlook, Heriot-Watt attracts students from all over the world and maintains partnerships with numerous international universities and industry leaders.</p>
+                    <h3>Queen Mary's University of London</h3>
+                    <p class="skills">Bsc Hons in Mathematics</p>
+                    <a class = "link-text" href="https://www.qmul.ac.uk" target="_blank"> Queen Mary's University of London</a>
+                    <p>A leading research-intensive university located in London, England. QMUL is part of the prestigious Russell Group of universities and offers a wide range of undergraduate, postgraduate, and research programs across various disciplines including medicine, law, engineering, humanities, and sciences. Known for its diverse and inclusive community, QMUL prides itself on its strong research culture, innovative teaching methods, and commitment to social responsibility.</p>
+                </div>
+                <div class="col-sm-12 container-about-1">
+                    <h1>Jobs</h1>
+                    <h3>M&S Customer Assistant</h3>
+                    <p class="skills">Customer Service | Punctuality | Team Work | leadership | Positivity</p>
+                    <a class = "link-text" href="https://www.marksandspencer.com/stores/new-milton-1610" target="_blank">M&S New Milton</a>
+                    <p>Before A level exams I worked at M&S in New Milton, where the work was all about team work and being innovative. New ideas were rewarded and received well. Great members of staff and really kind colleagues, I learnt the value of a good team here.</p>
+                    <h3>Waiter - White Buck</h3>
+                    <p class="skills">Team Work | Efficiency | Business Model | Structure | Management | Responsibility</p>
+                    <a class = "link-text" href="https://www.whitebuckburley.co.uk" target="_blank">White Buck Burley</a>
+                    <p>Being a Waiter at the White Buck, in Burley, really showed me how good structure and management can bring a team together. This was my first proper job and taught me how busy a work environment can become.</p>
+                    <h3>Cleaner - Shorefields</h3>
+                    <p class="skills">Atmosphere | Colleagues | Friendship | Environment | Time Management | Shift Management | Payroll</p>
+                    <a class = "link-text" href="https://www.shorefield.co.uk/?gad_source=1&gclid=Cj0KCQjwudexBhDKARIsAI-GWYV2dRh9IEd6Xw9lRtA4gEaaCBItp2jbUVAwJhFdtynsk4F-XuZnxsAaAjPKEALw_wcB" target="_blank">Shorefields Milford</a>
+                    <p>In being a Cleaner Shorefields, in Milford, I was introduced into a really good and kind work environment, where all management and staff made me feel welcome. Here I realised how importance work friendships can be, but also how important time management also is. Turning up on your on accord, and working the hours you claim to work is a really big part of the role.</p>
+                    <h3>Mathematics A level Tutor - Myself</h3>
+                    <p class="skills">Rates | Scheduling | Teaching | Tech Savvy | Documentation</p>
+                    <a class = "link-text" href="https://www.linkedin.com/in/toby-chen-167519298/" target="_blank">See my Linkedin for an example of a lesson</a>
+                    <p>I am also a current Mathematics tutor with (written on the 03/05/24) 2 students who just sat mocks. Their grades have gone from fails to B or upwards. This has taught me how to schedule my students into my week properly, and write comprehensive lessons and home work to help them achieve their best possible grades.</p>
+                </div>           
+                <div class="col-sm-12 container-about-1">
+                    <h1>Experience</h1>
+                    <h3>African Adventures - Kenya</h3>
+                    <p class="skills">Volunteering | Fundraising | Building | Fostering | Teaching</p>
+                    <a class = "link-text" href="https://www.africanadventures.co.uk" target="_blank">African Adventures</a>
+                    <p>I raised money when at Priestlands School - Lymington, to go to Kenya to help build school and experience their culture. A long process of fundraising £2000 (at 14yrs old) helped me develop the ideas of delayed gratification and I also learnt how to have fun at the same time. I did backpacking trips and many other things during time time to raise enough money.</p>
+                    <h3>New Forest Marathon Volunteer</h3>
+                    <p class="skills">Volunteering | Stall work</p>
+                    <a class = "link-text" href="https://www.newforestmarathon.co.uk" target="_blank">New Forest Marathon</a>
+                    <p>Helped at New Forest marathon to assist the finishers with refreshments and work the stands. Though the work was unpaid I learnt a great deal about running and small businesses.</p>
                 </div>
             </section>
-            <section id="mathematics" class="mathematics">
-                <div class="mathematicsContent">
-                    <h1>Mathematics</h1>
-                    <p>This section is currently under development and will, in the future, contain all of my lecture notes and mathematical documents as a form of central storage.</p>
-                    <h2>Current <span class="highlighted">favorite equation</span>,</h2>
-                    <div class="mathContainer">
-                        <p class = "rainbow"><span class="smaller">The Normal Distribution:</span>\[f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}\]</p>
-                    </div>
-                    <p>Basis of the <span class="highlighted">central limit theorem</span>.</p>
-                    <p>I currently have a personal interest in <span class="highlighted">Algebra</span> due to the formation and functionality of groups, rings, and fields. These abstract concepts have piqued my curiosity and are my current favorite module, owing to the level of abstraction they entail.</p>
-                    <p>I have also enjoyed <span class="highlighted">axiomatizing the probability function</span>.</p>
-                    <h2>Axioms: <span class="highlighted">Kolmogorov's Axioms</span>,</h2>
-                    <div class="mathContainer">
-                        <p class = ""><span class="smaller">Positivity:</span> \[\forall~E\in\Omega~\exists~\mathbb{P}(E)\geq 0.\]</p>
-                        <p class = ""><span class="smaller">Normalization:</span> \[\mathbb{P}(\Omega)=1.\]</p>
-                        <p class = ""><span class="smaller">Additivity:</span> \[\mathbb{P}\left(\bigcup_{i = 0}^{\infty}(E_i)\right)=\sum_{i=1}^{\infty}(\mathbb{P}(E_i)).\]</p>
-                    </div>
-                    <a href="mathLibrary.html" target="_blank">
-                        <button class="toMathsPage">To Math Library</button>
-                    </a>
-                </div>
+            <section id="portfolio">
+                <div class="col-sm-12">
+                    <h2>Portfolio</h2>
+                    <h3>Web Site</h3>
+                    <p class="skills">HTML | CSS | JavaScript | Bootstrap | Responsive</p>
+                    <p>This website has been coded by myself to display my skills and level of programming. I've made use of Bootstrap here to create a more comprehensive website layout, increasing UX. Buttons are animated and there is functionality to get tend to user needs. Colour choice and theme has been carefully through about.</p>
+                    <h3>Stock Analysis</h3>
+                    <p class="skills">Python | APIs | File Handling | Technical Analysis</p>
+                    <p>The stock analysis program is intended to produce buy and sell signals. I hope to create a bot in the future, however due to the complexity of the nature of the market I first want to understand how to analyse it properly, first. I've made use of an API to connect me to market data, and multiple different market data sources to then analyse with my own algorithms.</p>
+                    <p>The program stores signals in a normal .txt file, where I intend to also analyse the signals produced.</p>
+                </div>   
+                <div class="col-sm-6 container-portfolio-1"><div id="repo-info-1"></div></div>
+                <div class="col-sm-6 container-portfolio-1"><div id="repo-info-2"></div></div>
             </section>
-            <section id = "contact" class = "contact">
-                <div class="contactContent">
-                    <h1>Contact me,</h1>
-                    <p>I'd be more than happy to talk to anyone who has any enquiries or questions. If you wish to contact me, please contact me at <a class = "intractableText" onclick="copyText('toby.chen1337@outlook.com')">my email</a>, or <a class="intractableText" onclick="copyText('07714 387919')">my phone number</a>.</p>
-                    <p>Or you can contact me through my social media accounts at <a class="intractableText" href="https://www.instagram.com/tobychen1337/" target="_blank">my instagram</a> or <a class="intractableText" href="https://www.linkedin.com/in/toby-chen-167519298/" target="_blank">my linkedin</a>.</p>
-                    <h2 class="highlighted">Thankyou for Visiting</h2>
-                </div>
+            <section id="work">
+                <h1>Notes</h1>
+                <p>For notes I use \(\LaTeX\), a PDF editor that has an extensive mathematical library for typing complicated expressions. I find it to be efficient for compiling lecture notes into concise documents and will use this page to store them all.</p>
+                <h2>Mathematic Notes</h2>
+                <h2>Cyber Security Notes</h2>
             </section>
-        </main>
-        <footer class = "footer">
-            <p>2024 - Toby Chen - Last Updated: 11/03/2024 - Icons from <a class = "intractableText" href = "https://www.flaticon.com" target="_blank">flaticon</a>.</p>
-            <button id="scrollToTop" onclick="scrollToTop()"><img src="Media/upArrowBg.png" alt="Up Arrow" class = "upArrow"></img></button>
-        </footer>
-    </body>
-</html>
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>The best ways to get into contact with me are though <span class="link-text" style="cursor: pointer;">Email</span> and <span class="link-text" href="www.linkedin.com/in/toby-chen-167519298" target="_blank" style="cursor: pointer;">Linkedin</span></p>
+                <p>If your interested in my skills and would like a concise overview of myself, please download my general CV below,</p>
+            </section>
+            <div class="social-card">
+                <a href="https://www.instagram.com/tobychen1337/" target="_blank" class="socialContainer containerOne">
+                    <svg class="socialSvg instagramSvg" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                    </svg>
+                </a>
+                
+                <a href="https://github.com/ToadBoyChen"  target="_blank" class="socialContainer containerTwo">
+                    <svg class="socialSvg githubSvg" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                    </svg>              
+                </a>
+                
+                <a href="https://www.linkedin.com/in/toby-chen-167519298/" target="_blank" class="socialContainer containerThree">
+                    <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
+                        <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                    </svg>
+                </a>   
+            </div>
+        </body>
+        </html>
