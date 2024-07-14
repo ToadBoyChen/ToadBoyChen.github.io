@@ -52,34 +52,6 @@ $(document).ready(function(){
     });
 });
 
-// Initialize theme indicator
-let themeIndicator = 0;
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.theme-switch').forEach(function(Switch) {
-        Switch.addEventListener('change', function() {
-            if (themeIndicator % 2 === 0) {
-                document.body.classList.add('Background-light');
-                document.body.classList.remove('Background');
-                document.body.classList.add('body-light');
-                document.body.classList.remove('body');
-                let backgroundLoad = document.querySelector('.Background-load');
-                backgroundLoad.classList.add('Background-light-load');
-                backgroundLoad.classList.remove('Background-load');
-            } else {
-                document.body.classList.add('Background');
-                document.body.classList.remove('Background-light');
-                document.body.classList.add('body');
-                document.body.classList.remove('body-light');
-                let backgroundLoad = document.querySelector('.Background-light-load');
-                backgroundLoad.classList.add('Background-load');
-                backgroundLoad.classList.remove('Background-light-load');
-            }
-            themeIndicator++;
-        });
-    });
-});
-
 $(document).ready(function(){
     $('ul.navbar-nav li').click(function(){
         if ($(window).width() < 768) { // Check if screen width is less than 768px (phone size)
@@ -87,19 +59,6 @@ $(document).ready(function(){
         }
     });
 });
-
-function closePopup() {
-    var popup = document.getElementById('popup');
-    popup.style.display = 'none';
-}
-
-  // Close the popup when clicked outside of it
-window.onclick = function(event) {
-    var popup = document.getElementById('popup');
-    if (event.target == popup) {
-      popup.style.display = 'none';
-    }
-};
 
 document.addEventListener('DOMContentLoaded', function() {
     const username = 'ToadBoyChen';
@@ -177,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function hideButton() {
         let opacity = 1;
         const fadeOutInterval = setInterval(() => {
-            opacity -= 0.02; // Adjust the decrement value for desired speed
+            opacity -= 0.08; // Adjust the decrement value for desired speed
             button.style.opacity = opacity;
             if (opacity <= 0) {
                 clearInterval(fadeOutInterval);
@@ -203,29 +162,4 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('Button or target element not found');
     }
-});
-
-// script.js
-
-document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('.FLYIN-1');
-
-    const options = {
-        root: null, // viewport
-        threshold: 0.1, // trigger when 10% of the section is visible
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            console.log(`Target: ${entry.target}, Intersecting: ${entry.isIntersecting}`);
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-                observer.unobserve(entry.target); // Stop observing once it has been animated
-            }
-        });
-    }, options);
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
 });
