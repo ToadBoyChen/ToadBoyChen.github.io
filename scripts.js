@@ -1,246 +1,231 @@
-const scrollPos = window.scrollY;
-var header = document.querySelector('.header');
-var menu = this.document.querySelector('.menuToggle');
-
-const screenWidth = window.innerWidth;
-const screenHeight = window.innerHeight;
-
-if (screenHeight <= 500)
-{
-    header.style.padding = '4vh 2vh 4vh 1vh';
-    menu.style.padding = '0vw 8vw 0 1vw';
-}
-else if (screenWidth <= 1000)
-{
-    header.style.padding = '3vw 4vw 3vw 3vw';
-    menu.style.padding = '1vw 5vw 1 5vw';
-}
-else
-{
-    if (scrollPos > 500)
-    {
-        header.style.padding = '0.7vw 1.4vh 0.7vw 0.7vh';
-    }
-    else
-    {
-        header.style.padding = '2vw 4vh 2vw 2vh';
-    }
-}
-
-window.addEventListener('scroll', function() {
-    var sections = document.querySelectorAll('section');
-    var navLinks = document.querySelectorAll('.navbar a');
-    const scrollPos = window.scrollY;
-
-    sections.forEach(function(section) {
-        var top = section.offsetTop - 400;
-        var id = section.getAttribute('id');
-        var activeLink = document.querySelector('.navbar a[href="#' + id + '"]');
-
-        if (scrollPos >= top && scrollPos < top + section.offsetHeight) {
-            navLinks.forEach(function(link) {
-                link.classList.remove('active1');
-            });
-            activeLink.classList.add('active1');
+$(document).ready(function(){
+    $('section').each(function(index) {
+        if (index !== 0 && !$(this).hasClass('title-animation')) {
+            $(this).hide();
         }
     });
+    $('ul.navbar-nav li').click(function(){
+        // Show loading overlay
+        $('#loading-overlay').slideDown(300);
+        
+        // Remove active class from all navigation items
+        $('ul.navbar-nav li').removeClass('active');
+        // Add active class to the clicked navigation item
+        $(this).addClass('active');
+        
+        // Hide all sections
+        $('section').hide();
+        
+        // Get the target section
+        var targetSection = $(this).find('a').attr('href');
+        
+        // Show the target section after a delay (for demonstration)
+        setTimeout(function() {
+            // Hide loading overlay
+            $('#loading-overlay').slideUp(1000);
+            
+            // Slide in the target section
+            $(targetSection).slideDown(300);
+        }, 1000); // Adjust the delay as needed
+    });
 
-    var header = document.querySelector('.header');
-    var menu = this.document.querySelector('.menuToggle');
+    $('.navbar-brand').click(function(){
+        // Show loading overlay
+        $('#loading-overlay').slideDown(500);
+        
+        // Remove active class from all navigation items
+        $('ul.navbar-nav li').removeClass('active');
+        
+        // Hide all sections
+        $('section').hide();u
+        var targetSection = $(this).attr('href');
+        
+        // Show the target section after a delay (for demonstration)
+        setTimeout(function() {
+            // Hide loading overlay
+            $('#loading-overlay').slideUp(1000);
+            
+            // Slide in the target section
+            $(targetSection).slideDown(500);
+        }, 2000); // Adjust the delay as needed
 
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-
-    if (screenHeight <= 500)
-    {
-        header.style.padding = '4vh 2vh 4vh 1vh';
-        menu.style.padding = '0vw 8vw 0 1vw';
-    }
-    else if (screenWidth <= 1000)
-    {
-        header.style.padding = '3vw 4vw 3vw 3vw';
-        menu.style.padding = '0vw 5vw 0 5vw';
-    }
-    else
-    {
-        if (scrollPos > 500)
-        {
-            header.style.padding = '0.7vw 1.4vh 0.7vw 0.7vh';
-        }
-        else
-        {
-            header.style.padding = '2vw 4vh 2vw 2vh';
-        }
-    }
-
+    });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    var menuToggle = document.querySelector('.menuToggle');
-    var navbar = document.querySelector('.navbar');
-    var menuIcon = document.querySelector('.menuIcon');
-    var exitButton = document.querySelector('.exitButton');
+// Initialize theme indicator
+let themeIndicator = 0;
 
-    menuIcon.style.display = "block";
-
-    menuToggle.addEventListener('click', function () {
-        navbar.classList.toggle('collapsed');
-        if (navbar.classList.contains('collapsed')) {
-            menuIcon.style.display = 'none';
-            exitButton.style.display = 'inline-block';
-        } else {
-            menuIcon.style.display = 'inline-block';
-            exitButton.style.display = 'none';
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.theme-switch').forEach(function(Switch) {
+        Switch.addEventListener('change', function() {
+            if (themeIndicator % 2 === 0) {
+                document.body.classList.add('Background-light');
+                document.body.classList.remove('Background');
+                document.body.classList.add('body-light');
+                document.body.classList.remove('body');
+                let backgroundLoad = document.querySelector('.Background-load');
+                backgroundLoad.classList.add('Background-light-load');
+                backgroundLoad.classList.remove('Background-load');
+            } else {
+                document.body.classList.add('Background');
+                document.body.classList.remove('Background-light');
+                document.body.classList.add('body');
+                document.body.classList.remove('body-light');
+                let backgroundLoad = document.querySelector('.Background-light-load');
+                backgroundLoad.classList.add('Background-load');
+                backgroundLoad.classList.remove('Background-light-load');
+            }
+            themeIndicator++;
+        });
     });
+});
 
-    document.body.addEventListener('click', function (event) {
-        if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
-            navbar.classList.remove('collapsed');
-            menuIcon.style.display = 'inline-block';
-            exitButton.style.display = 'none';
+$(document).ready(function(){
+    $('ul.navbar-nav li').click(function(){
+        if ($(window).width() < 768) { // Check if screen width is less than 768px (phone size)
+            $('#myNavbar').collapse('hide');
         }
     });
 });
 
-var scrollToTopBtn = document.getElementById("scrollToTop");
+function closePopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
 
-window.onscroll = function() {
-    scrollFunction();
+  // Close the popup when clicked outside of it
+window.onclick = function(event) {
+    var popup = document.getElementById('popup');
+    if (event.target == popup) {
+      popup.style.display = 'none';
+    }
 };
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopBtn.style.display = "block";
+document.addEventListener('DOMContentLoaded', function() {
+    const username = 'ToadBoyChen';
+    const repoName1 = 'Trader';
+    const repoName2 = 'ToadBoyChen.github.io';
+
+    const apiUrl1 = `https://api.github.com/repos/${username}/${repoName1}`;
+    const apiUrl2 = `https://api.github.com/repos/${username}/${repoName2}`;
+
+    // Function to fetch number of commits
+    async function fetchCommitsCount(apiUrl) {
+        const commitsUrl = `${apiUrl}/commits`;
+        const response = await fetch(commitsUrl);
+        const commitsData = await response.json();
+        return commitsData.length;
+    }
+
+    // Fetch and display information for Repo 1
+    fetch(apiUrl1)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(async repoData => {
+            const repoInfoElement = document.getElementById('repo-info-1');
+            const commitsCount = await fetchCommitsCount(apiUrl1);
+
+            repoInfoElement.innerHTML = `
+                <h2>${repoData.name}</h2>
+                <p>Description: ${repoData.description}</p>
+                <p>Stars: ${repoData.stargazers_count}</p>
+                <p>Forks: ${repoData.forks_count}</p>
+                <p>Commits: ${commitsCount}</p>
+                <p>Language: ${repoData.language}</p>
+                <p><a href="${repoData.html_url}" target="_blank">${repoData.html_url}</a></p>
+            `;
+        })
+        .catch(error => {
+            console.error('Error fetching repository data:', error);
+        });
+
+    // Fetch and display information for Repo 2
+    fetch(apiUrl2)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(async repoData => {
+            const repoInfoElement = document.getElementById('repo-info-2');
+            const commitsCount = await fetchCommitsCount(apiUrl2);
+
+            repoInfoElement.innerHTML = `
+                <h2>${repoData.name}</h2>
+                <p>Description: ${repoData.description}</p>
+                <p>Stars: ${repoData.stargazers_count}</p>
+                <p>Forks: ${repoData.forks_count}</p>
+                <p>Commits: ${commitsCount}</p>
+                <p>Language: ${repoData.language}</p>
+                <p><a href="${repoData.html_url}" target="_blank">${repoData.html_url}</a></p>
+            `;
+        })
+        .catch(error => {
+            console.error('Error fetching repository data:', error);
+        });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.scrollPrompt');
+    const target = document.querySelector('.container-welcome-2');
+
+    function hideButton() {
+        let opacity = 1;
+        const fadeOutInterval = setInterval(() => {
+            opacity -= 0.02; // Adjust the decrement value for desired speed
+            button.style.opacity = opacity;
+            if (opacity <= 0) {
+                clearInterval(fadeOutInterval);
+                button.style.display = 'none';
+            }
+        }, 50); // Adjust the interval for desired smoothness
+    }
+
+    if (button && target) {
+        button.addEventListener('click', () => {
+            target.scrollIntoView({ behavior: 'smooth' });
+            hideButton();
+        });
+
+        window.addEventListener('scroll', () => {
+            const targetPosition = target.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (targetPosition <= windowHeight) {
+                hideButton();
+            }
+        });
     } else {
-        scrollToTopBtn.style.display = "none";
+        console.error('Button or target element not found');
     }
-}
+});
 
-function scrollToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
+// script.js
 
-let slideIndex = 1;
-showSlides(slideIndex);
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.FLYIN-1');
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+    const options = {
+        root: null, // viewport
+        threshold: 0.1, // trigger when 10% of the section is visible
+    };
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            console.log(`Target: ${entry.target}, Intersecting: ${entry.isIntersecting}`);
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target); // Stop observing once it has been animated
+            }
+        });
+    }, options);
 
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("slides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    slides[slideIndex-1].style.display = "flex";
-}
-
-function toggleContent(element) 
-{
-    var content = $(element).closest('.container').find('.expContent');
-    content.stop().slideToggle(750);
-    $(element).toggleClass('expanded');
-}
-
-function toggleContent_Portfolio(element) 
-{
-    var content = $(element).closest('.container_Portfolio').find('.expContent_Portfolio');
-    content.stop().slideToggle(750);
-    $(element).toggleClass('expanded');
-}
-
-
-function toggleContent_About(element) {
-    var content = $(element).closest('.container_about').find('.expContent');
-    var button = $(element).closest('.container_about').find('.button1');
-
-    content.stop().slideToggle(500);
-    $(element).toggleClass('expanded');
-
-    if ($(element).hasClass('expanded')) {
-        button.text("Show Less");
-    } else {
-        button.text("Read More");
-    }
-}
-
-function copyText(text) 
-{
-	navigator.clipboard.writeText(text).then(function() {alert('Text copied to clipboard: ' + text);}, function(err) {console.error('Unable to copy text: ', err);});
-}
-
-function animateAboutSection() {
-    var aboutSection = document.getElementById("about");
-    var aboutContent = document.querySelector(".aboutContent");
-    var educationSection = document.getElementById("education");
-    var portfolioSection = document.getElementById("portfolio");
-    var portfolioContent = document.querySelector(".portfolioContent");
-    var contactSection = document.getElementById("contact");
-    var contactContent = document.querySelector(".contactContent");
-    var mathSection = document.getElementById("mathematics");
-    var mathContent = document.querySelector(".mathematicsContent");
-
-    var educationOffsetTop = educationSection.offsetTop;
-    var aboutOffsetTop = aboutSection.offsetTop;
-    var portfolioOffSetTop = portfolioSection.offsetTop;
-    var contactOffSetTop = contactSection.offsetTop;
-    var mathOffSetTop = mathSection.offsetTop;
-
-    var windowHeight = window.innerHeight;
-    var scrollY = window.scrollY;
-
-    var check = scrollY + windowHeight - 500;
-
-    if (check > aboutOffsetTop) 
-    {
-        aboutContent.classList.add("show");
-    }
-
-    if (check > educationOffsetTop)
-    {
-        educationSection.classList.add("show");
-    }
-
-    if (check > portfolioOffSetTop)
-    {
-        portfolioContent.classList.add("show");
-    }
-
-    if (check > mathOffSetTop)
-    {
-        mathContent.classList.add("show");
-    }
-
-    if (check > contactOffSetTop)
-    {
-        contactContent.classList.add("show");
-    }
-}
-
-window.addEventListener("scroll", animateAboutSection);
-
-var clicked = false;
-
-function scrollDown(x) 
-{
-    if (clicked == false)
-    {
-        window.scrollBy({top: x, behavior: 'smooth'});
-        clicked = true;
-        var i = document.querySelector(".scrollPrompt");
-        i.classList.add("hidden");
-    }
-}
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
