@@ -62,7 +62,7 @@ $(document).ready(function(){
 
 document.addEventListener('DOMContentLoaded', function() {
     const username = 'ToadBoyChen';
-    const repoName1 = 'Trader';
+    const repoName1 = 'TOADTrade';
     const repoName2 = 'ToadBoyChen.github.io';
 
     const apiUrl1 = `https://api.github.com/repos/${username}/${repoName1}`;

@@ -264,7 +264,7 @@
 
 .card:hover .skill-percent {
     animation: slide-hover 2s ease-in-out forwards;
-    background-color: rgba(1, 167, 14, 0.74);
+    background-color: rgb(255, 112, 217);
 }
 
 .btn {
