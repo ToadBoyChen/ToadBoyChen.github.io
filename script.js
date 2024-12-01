@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const apiUrl1 = `https://api.github.com/repos/${username}/${repoName1}`;
     const apiUrl2 = `https://api.github.com/repos/${username}/${repoName2}`;
 
-    // Function to fetch number of commits
     async function fetchCommitsCount(apiUrl) {
         const commitsUrl = `${apiUrl}/commits`;
         const response = await fetch(commitsUrl);
@@ -76,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return commitsData.length;
     }
 
-    // Fetch and display information for Repo 1
     fetch(apiUrl1)
         .then(response => {
             if (!response.ok) {
@@ -95,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Forks: ${repoData.forks_count}</p>
                 <p>Commits: ${commitsCount}</p>
                 <p>Language: ${repoData.language}</p>
-                <p><a href="${repoData.html_url}" target="_blank">${repoData.html_url}</a></p>
+                <p><a href="${repoData.html_url}" target="_blank">${repoData.name}</a></p>
             `;
         })
         .catch(error => {
@@ -121,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Forks: ${repoData.forks_count}</p>
                 <p>Commits: ${commitsCount}</p>
                 <p>Language: ${repoData.language}</p>
-                <p><a href="${repoData.html_url}" target="_blank">${repoData.html_url}</a></p>
+                <p><a href="${repoData.html_url}" target="_blank">${repoData.name}</a></p>
             `;
         })
         .catch(error => {
@@ -136,13 +134,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function hideButton() {
         let opacity = 1;
         const fadeOutInterval = setInterval(() => {
-            opacity -= 0.08; // Adjust the decrement value for desired speed
+            opacity -= 0.08;
             button.style.opacity = opacity;
             if (opacity <= 0) {
                 clearInterval(fadeOutInterval);
                 button.style.display = 'none';
             }
-        }, 50); // Adjust the interval for desired smoothness
+        }, 50);
     }
 
     if (button && target) {
