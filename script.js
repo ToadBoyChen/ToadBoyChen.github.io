@@ -161,3 +161,30 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Button or target element not found');
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                // Optional: Stop observing once the animation is triggered
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    const target1 = document.querySelector(".container-welcome-2");
+    if (target1) {
+        observer.observe(target1);
+    }
+
+    const target2 = document.querySelector(".container-welcome-4");
+    if (target2) {
+        observer.observe(target2);
+    }
+
+    const target3 = document.querySelector(".container-welcome-5");
+    if (target3) {
+        observer.observe(target3);
+    }
+});
