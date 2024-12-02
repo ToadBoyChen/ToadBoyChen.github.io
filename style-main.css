@@ -17,13 +17,13 @@
 
 
 p {
-    font-size: 150%;
+    font-size: 125%;
 }
 
 h1 {
     text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
     margin: 20px 0 20px 0;
-    font-size: 220%;
+    font-size: 200%;
     font-weight: bolder;
 }
 

@@ -329,14 +329,14 @@
     flex-direction: column;
     font-weight: 100;
     font-size: medium;
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .link-text {
     font-weight: 100;
     font-size: medium;
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
     font-family: 'Courier New', Courier, monospace;
     color: rgb(255, 112, 217);
     text-shadow: 0 0 2px rgba(255, 255, 255, .3), 0 0 3px rgba(255, 255, 255, .3);
@@ -345,7 +345,7 @@
 
 .link-text:hover {
     color: rgb(182, 143, 255);
-    text-shadow: 0 0 15px rgba(255, 255, 255, .3), 0 0 3px rgba(255, 255, 255, .3);
+    text-shadow: 0 0 20px rgba(255, 255, 255, .3), 0 0 10px rgba(255, 255, 255, .3);
     text-decoration: none;
 }
 
@@ -412,7 +412,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 350px 0 600px 0;
+    margin: 250px 0 500px 0;
 }
 
 .container-about-1 {
@@ -444,11 +444,11 @@
     transition: opacity 1s, transform 1.5s; /* Smooth transition */
 }
 
-.container-welcome-2:hover {
-    backdrop-filter: blur(110px);
-    padding: 15px;
-    transition: 1s;
+.container-welcome-2.visible {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Slide in */
 }
+
 
 .container-welcome-4 {
     display: flex;
