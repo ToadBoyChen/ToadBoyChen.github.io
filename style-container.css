@@ -1,0 +1,241 @@
+.container-about-1, .container-about-2, .container-about-3, 
+.container-about-4, .container-about-5, .container-about-6, 
+.container-portfolio-1, .container-portfolio-2, .container-portfolio-3,
+.container-contact-1, .container-future-1 {
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(var(--blur-normal));
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 5px 10px 5px;
+    padding: 10px;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease-in-out, transform 1s ease-in-out;
+}
+
+.container-about-4:hover .skill-percent {
+    background-color: var(--active);
+    backdrop-filter: blur(var(--blur-active));
+    box-shadow: 0px 0px 40px 20px var(--active), 0px 0px 60px 30px var(--active);
+    width: var(--percentage);
+}
+
+.container-about-1:hover, .container-about-2:hover, .container-about-3:hover, 
+.container-about-4:hover, .container-about-5:hover, .container-about-6:hover,
+.container-portfolio-1:hover, .container-portfolio-2:hover, .container-portfolio-3:hover,
+.container-contact-1:hover, .container-future-1:hover  {
+    backdrop-filter: blur(var(--blur-active));
+    background-color: var(--secondary);
+}
+
+.container-about-1.visible, .container-about-2.visible, .container-about-3.visible, 
+.container-about-4.visible, .container-about-5.visible, .container-about-6.visible,
+.container-portfolio-1.visible, .container-portfolio-2.visible, .container-portfolio-3.visible,
+.container-contact-1.visible, .container-future-1.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.container-footer-1 {
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+}
+
+.container-welcome-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 300px 0 1000px 0;
+}
+
+.container-welcome-1-text {
+    margin: 20px 0px 0px 70px;
+    opacity: 0;
+    animation: flyIn 1.5s ease-out forwards;
+}
+
+.container-social-1:hover {
+    background-color: rgb(214, 41, 118, 0.5);
+    transition-duration: .3s;
+    box-shadow: 0px 0px 10px rgb(214, 41, 118, 0.2);
+}
+
+.container-social-2:hover {
+    background-color: rgb(0, 172, 238, 0.5);
+    transition-duration: .3s;
+    box-shadow: 0px 0px 10px rgb(0, 172, 238, 0.2);
+}
+
+.container-social-3:hover {
+    background-color: rgba(0, 177, 24, 0.5);
+    transition-duration: .3s;
+    box-shadow: 0px 0px 10px rgb(0, 177, 24, 0.2);
+}
+
+.socialContainer {
+    width: 50px;
+    height: 43px;
+    backdrop-filter: blur(var(--blur-normal));
+    background-color: var(--primary);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: .3s;
+}
+
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .container-about-1, .container-about-2, .container-about-3, 
+    .container-about-4, .container-about-5, .container-about-6,
+    .container-portfolio-1, .container-portfolio-2, .container-portfolio-3,
+    .container-contact-1, .container-future-1 {
+        transition: all 0.5s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .container-about-4 .skill-percent {
+        transition: all 0.7s ease-in-out;
+        width: 0;
+    }
+
+    .container-about-1:active, .container-about-2:active, .container-about-3:active, 
+    .container-about-4:active, .container-about-5:active, .container-about-6:active,
+    .container-portfolio-1:active, .container-portfolio-2:active, .container-portfolio-3:active,
+    .container-contact-1:active, .container-future-1:active {
+        backdrop-filter: blur(var(--blur-active));
+        background-color: var(--secondary);
+    }
+
+    .container-about-4:active .skill-percent {
+        background-color: var(--active);
+        backdrop-filter: blur(var(--blur-active));
+        box-shadow: 0px 0px 40px 20px var(--active), 0px 0px 60px 30px var(--active);
+        width: var(--percentage);
+        transition: all 0.7s ease-in-out;
+    }
+
+    .container-about-4.touch-active .skill-percent {
+        background-color: var(--active);
+        backdrop-filter: blur(var(--blur-active));
+        box-shadow: 0px 0px 40px 20px var(--active), 0px 0px 60px 30px var(--active);
+        width: var(--percentage);
+    }
+
+    .container-social-1:active,
+    .container-social-2:active,
+    .container-social-3:active {
+        transform: scale(0.95);
+        transition-duration: .3s;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .container-about-1:hover, .container-about-2:hover, .container-about-3:hover, 
+    .container-about-4:hover, .container-about-5:hover, .container-about-6:hover,
+    .container-portfolio-1:hover, .container-portfolio-2:hover, .container-portfolio-3:hover,
+    .container-contact-1:hover, .container-future-1:hover {
+        backdrop-filter: blur(var(--blur-active));
+        background-color: var(--secondary);
+    }
+
+    .container-about-4:hover .skill-percent {
+        background-color: var(--active);
+        backdrop-filter: blur(var(--blur-active));
+        box-shadow: 0px 0px 40px 20px var(--active), 0px 0px 60px 30px var(--active);
+        width: var(--percentage);
+    }
+
+    .container-social-1:hover {
+        background-color: rgb(214, 41, 118, 0.5);
+        box-shadow: 0px 0px 10px rgb(214, 41, 118, 0.2);
+    }
+
+    .container-social-2:hover {
+        background-color: rgb(0, 172, 238, 0.5);
+        box-shadow: 0px 0px 10px rgb(0, 172, 238, 0.2);
+    }
+
+    .container-social-3:hover {
+        background-color: rgba(0, 177, 24, 0.5);
+        box-shadow: 0px 0px 10px rgb(0, 177, 24, 0.2);
+    }
+}
+
+.container-about-1.visible, .container-about-2.visible, .container-about-3.visible, 
+.container-about-4.visible, .container-about-5.visible, .container-about-6.visible,
+.container-portfolio-1.visible, .container-portfolio-2.visible, .container-portfolio-3.visible,
+.container-contact-1.visible, .container-future-1.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media only screen and (max-width: 1500px) {
+    .container-welcome-1 {
+        margin: 500px 0 700px 0;
+    }
+    
+    .container-welcome-1-text {
+        margin: 20px 0px 0px 90px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .container-about-1, .container-about-2, .container-about-3, 
+    .container-about-4, .container-about-5, .container-about-6, 
+    .container-portfolio-1, .container-portfolio-2, .container-portfolio-3,
+    .container-contact-1, .container-future-1 {
+        opacity: 1;
+        transform: translateX(-300px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container-about-1, .container-about-2, .container-about-3, 
+    .container-about-4, .container-about-5, .container-about-6, 
+    .container-portfolio-1, .container-portfolio-2, .container-portfolio-3,
+    .container-contact-1, .container-future-1 {
+        opacity: 1;
+        transform: translateX(-300px);
+    }
+
+    .container-welcome-1 {
+        margin: 300px 0 700px 0;
+    }
+    
+    .container-welcome-1-text {
+        margin: 5px 0px 0px 30px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .container-about-1, .container-about-2, .container-about-3, 
+    .container-about-4, .container-about-5, .container-about-6, 
+    .container-portfolio-1, .container-portfolio-2, .container-portfolio-3,
+    .container-contact-1, .container-future-1 {
+        opacity: 1;
+        transform: translateX(-200px);
+    }
+
+    .container-welcome-1 {
+        margin: 270px 0 700px 0;
+    }
+
+    .container-welcome-1-text {
+        margin: 0px 0px 0px 35px;
+        font-size: 12px;
+    }
+}

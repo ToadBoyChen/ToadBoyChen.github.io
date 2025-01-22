@@ -11,49 +11,121 @@
 }
 
 :root {
-    --primary: rgba(0, 0, 0, 0.2);
-    --secondary: rgba(66, 83, 167, 0.2);
+    --primary: rgba(44, 40, 40, 0.2);
+    --secondary: rgba(158, 160, 172, 0.2);
+    --active: rgba(255, 69, 246, 0.7);
+    --active-solid: rgba(255, 69, 246, 1);
+    --active-active: rgba(69, 202, 255, 0.7);
+    --error: rgb(255, 143, 143);
+    --blur-normal: 2px;
+    --blur-active: 4px;
+    --shadow-normal: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --size: 16px;
 }
 
+p, li {
+    font-size: 100%;
+    font-weight: 200;
+}
 
-p {
-    font-size: 125%;
+li {
+    list-style: none;
+    margin: 0 0 10px 0;
+}
+
+a:visited, li:visited {
+    color: var(--active);
+    text-decoration: none;
 }
 
 h1 {
     text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
     margin: 20px 0 20px 0;
-    font-size: 200%;
+    font-size: 180%;
     font-weight: bolder;
 }
 
 h2 {
     text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
     margin: 20px 0 20px 0;
-    font-size: 180%;
+    font-size: 160%;
     font-weight: bold;
 }
 
 h3 {
     text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
     margin: 20px 0 20px 0;
-    font-size: 160%;
+    font-size: 140%;
     font-weight: bold;
 }
 
+section {
+    min-height: 100vh;
+    scroll-margin-top: 60px;
+    padding: 0px 300px 0px 300px;
+}
+
+footer {
+    background-color: #2c2c2c;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 50px 400px 0px 400px;
+}
+
 body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: hsl(0, 0%, 6%);
     font-size: 150%;
     min-width: 100vw;
     min-height: 100vh;
     transition: background-color 0.5s ease;
     text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
     overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    color: white;
+    padding: 0px 0px 0px 0px;
 }
 
-section {
-    padding: 0px 40px 0px 40px;
+@media only screen and (max-width: 1500px) {
+    section {
+        padding: 0px 100px 0px 100px;
+    }
+    
+    footer {
+        padding: 50px 100px 0px 100px;
+    }
 }
 
-iframe {
-    border-radius: 10px;
+@media only screen and (max-width: 1000px) {
+    section {
+        padding: 0px 2px 0px 2px;
+    }
+    
+    footer {
+        padding: 50px 2px 0px 2px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    footer {
+        padding: 50px 2px 100px 2px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
 }

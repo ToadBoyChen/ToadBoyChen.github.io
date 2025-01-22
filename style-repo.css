@@ -1,0 +1,249 @@
+.repo-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.repo-header h2 {
+    margin: 0;
+    flex: 1; /* Allow title to take available space */
+    min-width: 200px; /* Minimum width before wrapping */
+    word-break: break-word; /* Break long words if necessary */
+}
+
+.repo-title {
+    display: inline-flex; /* Changed from flex to inline-flex */
+    align-items: center;
+    gap: 8px;
+    max-width: 100%; /* Ensure it doesn't overflow container */
+    transition: all 0.5s ease-in-out;
+}
+
+.repo-title:hover {
+    color: var(--active-active);
+    text-decoration: none;
+}
+
+.repo-private, .repo-public {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap; /* Keep status label on one line */
+    align-self: flex-start; /* Align with top of header */
+}
+.repo-private {
+    backdrop-filter: blur(var(--blur-normal));
+    background-color: var(--primary);
+    color: #735c0f;
+}
+
+.repo-public {
+    backdrop-filter: blur(var(--blur-normal));
+    background-color: var(--primary);
+    color: #28a745;
+}
+
+.repo-description {
+    font-size: 100%;
+    font-weight: 200;
+    margin-bottom: 16px;
+}
+
+.repo-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-label {
+    font-size: 14px;
+}
+
+.stat-value {
+    font-weight: 600;
+}
+
+.repo-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 16px;
+    backdrop-filter: blur(var(--blur-normal));
+    background-color: var(--primary);
+    border-radius: 6px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail-label {
+    font-size: 12px;
+}
+
+.detail-value {
+    font-weight: 600;
+}
+
+.repo-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.repo-link {
+    padding: 6px 12px;
+    backdrop-filter: blur(var(--blur-normal));
+    background-color: var(--primary);
+    color: var(--active);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
+
+.repo-link:hover {
+    color: var(--active-active);
+    backdrop-filter: blur(var(--blur-active));
+    text-decoration: none;
+}
+
+.repo-loading {
+    text-align: center;
+    padding: 20px;
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--active);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.repo-error {
+    border-radius: 6px;
+    padding: 20px;
+    margin: 10px;
+    color: var(--error);
+    text-shadow: 0 0 0px rgba(255,255,255,.3), 0 0 0px rgba(255,255,255,.3);
+    font-size: 400;
+}
+
+.repo-error h3 {
+    color: var(--error);
+    text-shadow: 0 0 0px rgba(255,255,255,.3), 0 0 0px rgba(255,255,255,.3);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.error-message {
+    background: rgba(255, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.repo-error .repo-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: 1px solid var(--error);
+    color: var(--error);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+.repo-error .repo-link:hover {
+    background: var(--error);
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .repo-title:hover {
+        color: var(--active-active);
+        text-decoration: none;
+    }
+
+    .repo-link:hover {
+        color: var(--active-active);
+        backdrop-filter: blur(var(--blur-active));
+        text-decoration: none;
+    }
+
+    .repo-error .repo-link:hover {
+        background: var(--error);
+        color: black;
+        font-weight: 500;
+        text-decoration: none;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .repo-title {
+        transition: none;
+    }
+
+    .repo-title:active {
+        color: var(--active-active);
+        transform: scale(0.98);
+    }
+
+    .repo-link {
+        transition: none;
+    }
+
+    .repo-link:active {
+        color: var(--active-active);
+        backdrop-filter: blur(var(--blur-active));
+        transform: scale(0.98);
+    }
+
+    .repo-error .repo-link:active {
+        background: var(--error);
+        color: black;
+        font-weight: 500;
+        transform: scale(0.98);
+    }
+
+    .repo-link {
+        padding: 8px 16px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .stat, .detail {
+        min-height: 44px;
+    }
+
+    .repo-header, .repo-stats, .repo-details, .repo-links {
+        transition: none;
+    }
+}

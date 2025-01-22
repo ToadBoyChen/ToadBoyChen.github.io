@@ -7,18 +7,6 @@
     }
 }
 
-@keyframes flyIn {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-        visibility: visible; 
-    }
-}
-
 @keyframes text-animation {
     0% {margin-top: 0;}
     10% {margin-top: 0;}
@@ -48,15 +36,6 @@
     0% { width: 0%; }
     70% { width: calc(var(--percentage) / 0.95); }
     100% { width: calc(var(--percentage)); }
-}
-
-
-@keyframes slide {
-    0% { width: calc(var(--percentage) / 1); }
-    50% { width: calc(var(--percentage) / 1.08); }
-    70% { width: calc(var(--percentage) / 0.98); }
-    85% { width: calc(var(--percentage) / 1.08); }
-    100% { width: calc(var(--percentage) / 1); }
 }
 
 @keyframes flip2 {
@@ -119,6 +98,17 @@
     }
 }
 
+@keyframes flyOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
 section.FLYIN-1 {
     opacity: 0;
     transform: translateX(-100%);
@@ -128,4 +118,13 @@ section.FLYIN-1 {
 section.FLYIN-1.in-view {
     opacity: 1;
     transform: translateX(0);
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
 }

@@ -1,374 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Toby Chen's Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="style-main.css" />
-    <link rel="stylesheet" href="style-nav.css" />
-    <link rel="stylesheet" href="style-cursor.css" />
-    <link rel="stylesheet" href="style-classes.css" />
-    <link rel="stylesheet" href="style-sections.css" />
-    <link rel="stylesheet" href="style-keyframes.css" />
-    <link rel="stylesheet" href="style-theme.css" />
-    <link rel="stylesheet" href="style-load.css" />
-    <link rel="stylesheet" href="style-card.css" />
-    <link rel="stylesheet" href="style-tiny.css" />
-    <link rel="stylesheet" href="style-small.css" />
-    <link rel="stylesheet" href="style-medium.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="script.js"></script>
-</head>
-
-<body class="body Background">
-    <div class="Background-load" id="loading-overlay"></div>
-    <nav class="navbar navbar-fixed-bottom navbar-inverse blur" style="z-index: 50">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand hoverable solid" href="">Toby Chen</a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active hoverable welcome-nav"><a href="#welcome">Welcome</a></li>
-                    <li class="hoverable about-nav"><a href="#about">About Me</a></li>
-                    <li class="hoverable portfolio-nav"><a href="#portfolio">Portfolio</a></li>
-                    <!-- <li class="hoverable"><a href="#work">Work</a></li> -->
-                    <li class="hoverable contact-nav"><a href="#contact">Contact</a></li>
-                </ul>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Toby Chen's Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="style-main.css" />
+        <link rel="stylesheet" href="style-nav-btn.css" />
+        <link rel="stylesheet" href="style-classes.css" />
+        <link rel="stylesheet" href="style-keyframes.css" />
+        <link rel="stylesheet" href="style-background.css" />
+        <link rel="stylesheet" href="style-container.css" />
+        <link rel="stylesheet" href="style-repo.css" />
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="script.js"></script>
+        <noscript>
+            <style>
+                .container-about-1, .container-about-2, .container-about-3, 
+                .container-about-4, .container-about-5, .container-about-6, 
+                .container-portfolio-1, .container-portfolio-2, .container-portfolio-3,
+                .container-contact-1, .container-future-1 {
+                    opacity: 1 !important;
+                    transform: none !important;
+                }
+            </style>
+        </noscript>
+    </head>
+    <body class="body">
+        <div class="el1"></div>
+        <div class="scroll-indicator">
+            <div class="scroll-dots">
+                <div class="section-dot" data-section="welcome"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                <div class="section-dot" data-section="about"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                <div class="section-dot" data-section="portfolio"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                <div class="section-dot" data-section="future"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                <div class="section-dot" data-section="contact"></div>
             </div>
         </div>
-    </nav>
-    <!-- <div class="themeContainer">
-            <div class="theme-switch hoverable">
-                <input type="checkbox" id="theme-checkbox" />
-                <label for="theme-checkbox">
-                    <div></div>
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd"></path>
-                        </svg>
-                    </span>
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                            <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"></path>
-                        </svg>
-                    </span>
-                </label>
-            </div>      
-        </div> -->
-    <section id="welcome">
-        <div class="col-sm-12 container-welcome-1 shadow">
-            <h4 class="wordCarousel">
-                <span>Hey there and Welcome, I'm </span>
-                <div>
-                    <ul class="flip5">
-                        <li>Toby Chen</li>
-                        <li>a Programmer</li>
-                        <li>a Student</li>
-                        <li>a Athlete</li>
-                        <li>a Mathematician</li>
+        <nav class="navbar navbar-fixed-bottom navbar-inverse blur">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand">Toby Chen</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active hoverable welcome-nav"><a href="#welcome">Welcome</a></li>
+                        <li class="hoverable about-nav"><a href="#about">About Me</a></li>
+                        <li class="hoverable portfolio-nav"><a href="#portfolio">Code</a></li>
+                        <li class="hoverable future-nav"><a href="#future">Future</a></li>
+                        <li class="hoverable contact-nav"><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-            </h4>
-            <button class="scrollPrompt">Scroll Down</button>
-        </div>
-        <div class="target"></div>
-        <div class="col-sm-8">
-            <div class="container-welcome-2">
-                <h1>Who am I?</h1>
-                <p class="skills">
-                    UG Mathematician | Looking to get an Internship | Athlete | Programmer | Pure Mathematician
-                </p>
-                <p>
-                    <a href="https://www.qmul.ac.uk" target="_blank" class="link-text">Queen Mary's University of
-                        London</a>
-                    |
-                    <a href="https://www.ukshaolin.com" target="_blank" class="link-text">UK Shaolin Center</a>
-                </p>
-                <p>
-                    I'm a Second year Mathematics student at Queen Mary University of London with a passion 
-                    for pure mathematics, looking to kickstart my career. 
-                    This website showcases my strengths as a
-                    Programmer, Mathematician, Problem Solver and Hard Worker.
-                </p>
-                <h2>Services</h2>
-                <p class="skills">
-                    Web Development | Algorithm Design | Internships | Paid Work |
-                    Volunteering | Research
-                </p>
-                <p>
-                    I am a keen student and programmer and am sure I can be of service to you!
-                    Don't hesitate, if you like what you see, feel free to contact me. The best ways to reach me a though
-                    email, Linkedin and Instagram.
-                </p>
             </div>
-            <div class="container-welcome-5">
-                <h1>Curriculum Vitae</h1>
-                <p>
-                    Download my general CV to see a more condensed list of my skills and aspirations. 
-                    I'm always open to different career paths that I had maybe not considered before. 
-                    In doing a mathematics degree, I've gained such a freedom, as I have such strong foundations in
-                    problem solving and logic.
-                </p>
-                <a href="CV Toby Chen - General.docx" download="Toby-Chen-CV-General" style="align-self: center;"><button class="btn">Download Here</button></a>
+        </nav>
+        <section id="welcome">
+            <div class="col-sm-12 container-welcome-1">
+                <h4 class="wordCarousel">
+                    <span>Welcome, I'm a</span>
+                    <div>
+                        <ul class="flip4">
+                            <li>Programmer</li>
+                            <li>Student</li>
+                            <li>Athlete</li>
+                            <li>M\(\alpha\)thematician</li>
+                        </ul>
+                    </div>
+                </h4>
+                <p class="container-welcome-1-text">Designed & maintained by Toby Chen</p>
+                <button class="scrollPrompt">Scroll Down</button>
             </div>
-        </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-3 container-welcome-4">
-            <h1>Fun Facts</h1>
-            <h2>Hobbies</h2>
-            <p>
-                I am a national Kickboxer, play for QMRFC 1st XV, London Scottish Lions and fight in Muay Thai.
-            </p>
-            <p>
-                I also play the guitar; my favourite type of music right now is probably alt-rock (favourite band might be The Smiths). 
-                I'm quite good at Chess though am currently out of practise - even the low ELO bots are beating me.
-            </p>
-            <h2>Talents</h2>
-            <p>1. Programming</p>
-            <p>2. Analytical Skills</p>
-            <p>3. Mathematics</p>
-            <p>4. Problem solving</p>
-            <p>5. Statistical Analysis</p>
-            <h2>Languages</h2>
-            <p>English - native language</p>
-            <p>Chinese Mandarin - intermediate</p>
-        </div>
-        <div class="col-sm-12 center">
-            <div class="card">
-                <div class="header-skills">My Coding Skills</div>
-                <div class="body">
-                    <div class="skill">
-                        <div class="skill-name">HTML</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="--percentage: 20%"></div>
-                        </div>
-                        <div class="skill-percent-number">10%</div>
+        </section>
+        <div class="target" id="scroll-target"></div>
+        <section id="about">
+            <div class="col-sm-12">
+                <div class="col-sm-12">
+                    <div class="container-about-1">
+                        <h1>Who am I?</h1>
+                        <p class="skills">
+                            UG Mathematician | Athlete | Programmer
+                        </p>
+                        <p>
+                            <a href="https://www.qmul.ac.uk" target="_blank" class="link-text">Queen Mary's University of
+                                London</a>
+                            |
+                            <a href="https://www.ukshaolin.com" target="_blank" class="link-text">UK Shaolin Center</a>
+                        </p>
+                        <p>
+                            I'll Keep it short for you, I'm a second year Mathematics student at Queen Mary University of London with a genuine passion 
+                            for everything Mathematics, Puzzles and Sports. I am currently looking to kickstart my career as my time at university is almost at an end!
+                            This website is simply a \(fancy\) CV, and I hope it shows off what makes me a special and unique person.
+                        </p>
                     </div>
-                    <div class="skill">
-                        <div class="skill-name">R</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="--percentage: 20%"></div>
-                        </div>
-                        <div class="skill-percent-number">10%</div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="col-sm-12 container-about-2">
+                        <h1>Fun Facts</h1>
+                        <h2>Hobbies</h2>
+                        <p>
+                            I am a national Kickboxer, play for QMRFC 1st XV, London Scottish Lions and fight in Muay Thai.
+                        </p>
+                        <p>
+                            I also play the guitar; my favourite type of music right now is probably alt-rock (favourite band is The Smiths).
+                        </p>
+                        <p>
+                            I'm an avid programmer, self taught since post-A levels due to my degree. 
+                            For example I have taught myself web development and C. I hope to keep developing a large portfolio, especially in the cyber security and mathematical world.
+                        </p>
+                        <h2>Skills</h2>
+                        <ul>
+                            <li>1. Programming</li>
+                            <li>2. Analytical Skills</li>
+                            <li>3. Mathematics</li>
+                            <li>4. Problem solving</li>
+                            <li>5. Communication & Team work</li>
+                        </ul>
+                        <h2>Languages</h2>
+                        <p>English - native language</p>
+                        <p>Chinese Mandarin - intermediate</p>
                     </div>
-                    <div class="skill">
-                        <div class="skill-name">C#</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="--percentage: 30%"></div>
-                        </div>
-                        <div class="skill-percent-number">25%</div>
+                    <div class="col-sm-12 container-about-5">
+                        <h1>About Me</h1>
+                        <p class="skills">
+                            Sports | Mathematics | Coding | Music | Games | Reading | Business
+                        </p>
+                        <p>
+                            I'm really open to explore different types of work in
+                            different industries, I just want to learn and develop academically and professionally.
+                            As of recently, the idea of research interests me. If I'm able to do well enough In my degree, its certainly an option.
+                        </p>
+                        <p>
+                            I try to stay active and fit all time throughout the year. This can, as we all know,
+                            be tricky, especially as I have to start doing adult things like laundry. But, at the end of the day, I value health
+                            and hope to continuously improve mine forever. I aspire to become at least a
+                            semi-pro fighter some day and maybe even give rugby a go, as I've picked it up recently and thoroughly enjoy it.
+                        </p>
                     </div>
-                    <div class="skill">
-                        <div class="skill-name">Python</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="--percentage: 40%"></div>
-                        </div>
-                        <div class="skill-percent-number">30%</div>
+                    <div class="col-sm-12 container-about-6">
+                        <h1>Charity Work</h1>
+                        <p>
+                            I have done a small amount of work for charity and volunteering in general. Take the below two examples,
+                        </p>
+                        <h3>African Adventures - Kenya</h3>
+                        <p class="skills">
+                            Volunteering | Fundraising | Building | Fostering | Teaching
+                        </p>
+                        <a class="link-text" href="https://www.africanadventures.co.uk" target="_blank">African Adventures</a>
+                        <h3>New Forest Marathon Volunteer</h3>
+                        <p class="skills">Volunteering | Stall work</p>
+                        <a class="link-text" href="https://www.newforestmarathon.co.uk" target="_blank">New Forest Marathon</a>
                     </div>
-                    <div class="skill">
-                        <div class="skill-name">Java</div>
-                        <div class="skill-level">
-                            <div class="skill-percent" style="--percentage: 30%"></div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="col-sm-12 container-about-3">
+                        <h1>Curriculum Vitae</h1>
+                        <p>
+                            Download my general CV to see a more condensed list of my skills and aspirations. 
+                            I'm always open to different career paths that I had maybe not considered before. 
+                            If you have an idea of where I might fit in, send me an email or message!
+                        </p>
+                        <p>
+                            In doing a Mathematics degree I've developed strong foundations in problem solving and logic. 
+                            My interests within Mathematics lie mainly within Number Theory and maybe pure maths in general (as of 2nd year maths).
+                        </p>
+                        <a href="CV Toby Chen - General.docx" download="Toby-Chen-CV-General" style="align-self: center;"><button class="btn">Download Here</button></a>
+                        <p></p>
+                        <p>
+                            I am actually considering Mathematical research. 
+                            I have grown to really love the subject and would maybe like to contribute to the field.
+                            If you have any connections to research I'd love to know!
+                            The best way to contact me is at my <span class="link-text" data-email="toby.chen1337@outlook.com" onclick="alert('Email: toby.chen1337@outlook.com')">Email</span>.
+                        </p>
+                    </div>  
+                    <div class="col-sm-12 container-about-4">
+                        <h1>My Coding Skills</h1>
+                        <p>My most notable programming languages are shown below.</p>
+                        <div class="skill">
+                            <div class="skill-name">HTML</div>
+                            <div class="skill-level">
+                                <div class="skill-percent" style="--percentage: 40%"></div>
+                            </div>
+                            <div class="skill-percent-number">10%</div>
+                            <p>Skills are shown [hopefully] through this website.
+                                In this part, I refer to my web-development skills in general.
+                            </p>
                         </div>
-                        <div class="skill-percent-number">25%</div>
+                        <div class="skill">
+                            <div class="skill-name">C++</div>
+                            <div class="skill-level">
+                                <div class="skill-percent" style="--percentage: 40%"></div>
+                            </div>
+                            <div class="skill-percent-number">10%</div>
+                            <p>Through programming a lot with C# I gained a high-level understanding of C languages.
+                                I did demo code with the famous spinning doughnut.
+                            </p>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">C#</div>
+                            <div class="skill-level">
+                                <div class="skill-percent" style="--percentage: 55%"></div>
+                            </div>
+                            <div class="skill-percent-number">25%</div>
+                            <p>During my A-levels, I used C# entirely. I coded many different small projects and also coded 
+                                Chess in WinForms, with a full and proper GUI.
+                            </p>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Python</div>
+                            <div class="skill-level">
+                                <div class="skill-percent" style="--percentage: 70%"></div>
+                            </div>
+                            <div class="skill-percent-number">30%</div>
+                            <p>Python is my strongest language. Its super easy to code in and full of libraries.
+                                My most notable projects probably include my Trading algorithm and my Cyber security tools.
+                            </p>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Java</div>
+                            <div class="skill-level">
+                                <div class="skill-percent" style="--percentage: 55%"></div>
+                            </div>
+                            <div class="skill-percent-number">25%</div>
+                            <p>I am similarly experience with Java compared with C#. 
+                                I have not created any notable projects with Java though I intend to create something soon.
+                            </p>
+                        </div>
+                        <p>
+                            I would like to start coding again with C# and get good with C++, as In a purley programming sense, I would like 
+                            to get good at optimising and creating fast code. For example, my Python trading algorithm runs slow due to the 
+                            forecast function, which is a few nested loops, a problem much less evident if I use a highly efficient language.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-12 container-welcome-3 shadow">
-            <div class="shine">THANKS FOR VISITING!</div>
-        </div>
-    </section>
-    <section id="about">
-        <div class="col-sm-12 container-about-1">
-            <h1>About Me</h1>
-            <p class="skills">
-                Sports | Mathematics | Coding | Music | Games | Reading | Business
-            </p>
-            <p>
-                I'm a current undergraduate in Mathematics at Queen Mary's University
-                of London looking to start a professional career and make a
-                difference. I'm really open to explore different types of work in
-                different industries, I just want to learn and develop academically and professionally.
-            </p>
-            <p>
-                I stay active and fit all time throughout the year, as I have found
-                great benefits, not only physically but also mentally. I value health
-                and hope to continuously improve mine. I aspire to become at least a
-                semi-pro fighter some day and maybe even give rugby a go.
-            </p>
-        </div>
-        <div class="col-sm-12 container-about-1">
-            <h1>Education</h1>
-            <h3>Priestlands School</h3>
-            <p class="skills">
-                Mathematics | Computer Science | Biology | Chemistry | Physics |
-                English Lang | English Lit | Geography | Music | Fine Art
-            </p>
-            <a class="link-text" href="https://www.priestlands.hants.sch.uk" target="_blank">Priestlands School</a>
-            <p>
-                Educational institution in Lymington, Hampshire. Known for academic
-                excellence, holistic development, and diverse extracurricular
-                opportunities.
-            </p>
-            <h3>Brockenhurst College</h3>
-            <p class="skills">
-                Chinese Mandarin | Mathematics | Computer Science | Biology
-            </p>
-            <a class="link-text" href="https://www.brock.ac.uk" target="_blank">Brockenhurst College</a>
-            <p>Further education college located in Brockenhurst.</p>
-            <h3>Heriot-Watt University</h3>
-            <p class="skills">CertHE in Computer Science and Mathematics</p>
-            <a class="link-text" href="https://www.hw.ac.uk" target="_blank">Heriot-Watt University</a>
-            <p>
-                Institution based in Edinburgh, known for its strong emphasis on
-                research and Mathematics.
-            </p>
-            <h3>Queen Mary's University of London</h3>
-            <p class="skills">Bsc Hons in Mathematics</p>
-            <a class="link-text" href="https://www.qmul.ac.uk" target="_blank">
-                Queen Mary's University of London</a>
-            <p>
-                Research intensive university located in London. QMUL is part of the
-                prestigious Russell Group of universities.
-            </p>
-        </div>
-        <div class="col-sm-12 container-about-1">
-            <h1>Jobs</h1>
-            <h3>M&S Customer Assistant</h3>
-            <p class="skills">
-                Customer Service | Punctuality | Team Work | leadership | Positivity
-            </p>
-            <a class="link-text" href="https://www.marksandspencer.com/stores/new-milton-1610" target="_blank">M&S New
-                Milton</a>
-            <h3>Waiter - White Buck</h3>
-            <p class="skills">
-                Team Work | Efficiency | Business Model | Structure | Management |
-                Responsibility
-            </p>
-            <a class="link-text" href="https://www.whitebuckburley.co.uk" target="_blank">White Buck Burley</a>
-            <h3>Cleaner - Shorefields</h3>
-            <p class="skills">
-                Atmosphere | Colleagues | Friendship | Environment | Time Management |
-                Shift Management | Payroll
-            </p>
-            <a class="link-text"
-                href="https://www.shorefield.co.uk/?gad_source=1&gclid=Cj0KCQjwudexBhDKARIsAI-GWYV2dRh9IEd6Xw9lRtA4gEaaCBItp2jbUVAwJhFdtynsk4F-XuZnxsAaAjPKEALw_wcB"
-                target="_blank">Shorefields Milford</a>
-            <h3>Mathematics A level Tutor - Myself</h3>
-            <p class="skills">
-                Rates | Scheduling | Teaching | Tech Savvy | Documentation
-            </p>
-            <a class="link-text" href="https://www.linkedin.com/in/toby-chen-167519298/" target="_blank">See my Linkedin
-                for an example of a lesson</a>
-        </div>
-        <div class="col-sm-12 container-about-1">
-            <h1>Experience</h1>
-            <h3>African Adventures - Kenya</h3>
-            <p class="skills">
-                Volunteering | Fundraising | Building | Fostering | Teaching
-            </p>
-            <a class="link-text" href="https://www.africanadventures.co.uk" target="_blank">African Adventures</a>
-            <h3>New Forest Marathon Volunteer</h3>
-            <p class="skills">Volunteering | Stall work</p>
-            <a class="link-text" href="https://www.newforestmarathon.co.uk" target="_blank">New Forest Marathon</a>
-        </div>
-    </section>
-    <section id="portfolio">
-        <div class="col-sm-12">
-            <h2>Portfolio</h2>
-            <h3>Web Site</h3>
-            <p class="skills">HTML | CSS | JavaScript | Bootstrap | Responsive</p>
-            <p>
-                I coded this website to showcase my programming skills. Using
-                Bootstrap, I've created a comprehensive layout to enhance UX. The site
-                features animated buttons and user-friendly functionality. The color
-                scheme and theme have been carefully chosen.
-            </p>
-            <h3>Stock Analysis</h3>
-            <p class="skills">Python | APIs | File Handling | Technical Analysis</p>
-            <p>
-                The stock analysis program generates buy and sell signals. The algorithm back tests trading strategies
-                on historical data and then simulates a forecast. This gives rough estimates on potential returns.
-            </p>
-            <p>
-                The program stores signals in a normal .txt file for additional data analysis.
-            </p>
-        </div>
-        <div class="col-sm-6 container-portfolio-1">
-            <div id="repo-info-1"></div>
-        </div>
-        <div class="col-sm-6 container-portfolio-1">
-            <div id="repo-info-2"></div>
-        </div>
-    </section>
-    <!-- <section id="work">
-        <h1>Notes</h1>
-        <p>
-            For notes I use \(\LaTeX\), a PDF editor that has an extensive
-            mathematical library for typing complicated expressions. I find it to be
-            efficient for compiling lecture notes into concise documents and will
-            use this page to store them all.
-        </p>
-        <h2>Mathematics Notes</h2>
-        <h2>Cyber Security Notes</h2>
-    </section> -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>
-            The best ways to get into contact with me are though
-            <span class="link-text" style="cursor: pointer">Email</span>,
-            <span class="link-text" href="www.linkedin.com/in/toby-chen-167519298" target="_blank"
-                style="cursor: pointer">Linkedin</span> and <span class="link-text" href="https://www.instagram.com/tobychen1337/">Instagram</span>.
+        </section>
+        <section id="portfolio">
+            <div class="col-sm-12">
+                <div class="col-sm-12">
+                    <div class="container-portfolio-1">
+                        <h1>Portfolio</h1>
+                        <p class="skills">
+                            Python | Web Dev | Java | Git | Modelling
+                        </p>
+                        <p>
+                            I've been spending time during university developing a series of coding projects which I hope impress you.
+                            I have not nearly made enough progress to be proud of what I have yet achieved, though for some of my code, 
+                            you can view them below.
+                        </p>
+                        <p>
+                            Do not be worried by the scarcity of code projects, I intend to develop much more, as described in the 'Future' section.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-sm-12">
+                    <div class="container-portfolio-2">
+                        <div id="repo-info-1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-sm-12">
+                    <div class="container-portfolio-3">
+                        <div id="repo-info-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="future">
+            <div class="col-sm-12">
+                <div class="col-sm-12">
+                    <div class="container-future-1">
+                        <h1>So, Whats Next for Me?</h1>
+                        <p>
+                            I have so much planned for the future, and I wish to share my goals with everyone.
+                            Here I will talk about necessities, aspirations and ideas. These, I'm sure, are 
+                            certain to change over time, as some doors close and others open, for below contains 
+                            some general idea and direction of where I want to go.
+                        </p>
+                    </div>
+                    <div class="container-future-2">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>2024 - 2025</h3>
+                                    <ul>
+                                        <li>1. Finish 2nd Year Mathematics at QMUL with good grades and start 3rd year,</li>
+                                        <li>2. Develop 2 Cyber security tools to assist in bug bounty programmes,</li>
+                                        <li>3. Work on my health. Get into good shape, take up running longer distances at around half marathons,</li>
+                                        <li>4. Try to secure an Internship for the summer before the commence of 3rd year.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>2025 - 2026</h3>
+                                    <ul>
+                                        <li>1. Intensely study - achieve a 1st class degree with honours in mathematics, likely to specialise in Pure Mathematics,</li>
+                                        <li>2. Consider options, apply, or return to a job, likely in tech or finance, or continue to study as a PG,</li>
+                                        <li>3. Ramp up sporting activities, start to compete again.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>2026 - 2027</h3>
+                                    <ul>
+                                        <li>1. Start a business in somewhere in Tech,</li>
+                                        <li>2. Consider moving into the Semi-Pro fighting scene,</li>
+                                        <li>3. Consider real Mathematical research,</li>
+                                        <li>4. Consider the Army as a real job, try out to be an Intelligence officer.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="col-sm-12">
+                <div class="col-sm-12">
+                    <div class="container-contact-1">
+                        <h2>Contact</h2>
+                        <p>
+                            The best ways to get into contact with me are though
+                            <span class="link-text" data-email="toby.chen@example.com" onclick="alert('Email: toby.chen@example.com')">Email</span>,
+                            <a class="link-text" href="https://www.linkedin.com/in/toby-chen-167519298" target="_blank"> LinkedIn </a> and 
+                            <a class="link-text" href="https://www.instagram.com/tobychen1337/" target="_blank">Instagram</a>.
+                        </p>
+                        <p>
+                            I'd love to hear any feedback about my website so please feel free to suggest improvements. 
+                            I appreciate the time you have spent here.
+                        </p>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required placeholder="Your Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" required placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="social-card">
+            <a href="https://www.instagram.com/tobychen1337/" target="_blank" class="socialContainer container-social-1">
+                <svg class="socialSvg instagramSvg" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                    </path>
+                </svg>
+            </a>
 
-                I'd love to hear any feedback about my website so please feel free to suggest improvements!
-        </p>
-        <p>
-            Thank you for viewing this website. I hope it impresses you and shows my dedication to a project i set my mind to.
+            <a href="https://github.com/ToadBoyChen" target="_blank" class="socialContainer container-social-2">
+                <svg class="socialSvg githubSvg" viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+                    </path>
+                </svg>
+            </a>
 
-            Much thanks Reader, farewell.
-        </p>
-    </section>
-    <div class="social-card">
-        <a href="https://www.instagram.com/tobychen1337/" target="_blank" class="socialContainer containerOne">
-            <svg class="socialSvg instagramSvg" viewBox="0 0 16 16">
-                <path
-                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
-                </path>
-            </svg>
-        </a>
-
-        <a href="https://github.com/ToadBoyChen" target="_blank" class="socialContainer containerTwo">
-            <svg class="socialSvg githubSvg" viewBox="0 0 24 24">
-                <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
-                </path>
-            </svg>
-        </a>
-
-        <a href="https://www.linkedin.com/in/toby-chen-167519298/" target="_blank"
-            class="socialContainer containerThree">
-            <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
-                <path
-                    d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
-                </path>
-            </svg>
-        </a>
-    </div>
-</body>
-
+            <a href="https://www.linkedin.com/in/toby-chen-167519298/" target="_blank"
+                class="socialContainer container-social-3">
+                <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
+                    <path
+                        d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+        <footer class="footer">
+            <div class="container-footer-1">
+                <div class="col-sm-12">
+                    <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <p>
+                                This website relies heavily on the work of others. Though I did indeed code the website entirely, there were some helpful UI-UX snippets and frameworks used.
+                                A big thank you to the following,
+                            </p>
+                            <p>
+                                | <a class="link-text" href="https://uiverse.io/" target="_blank">UIverse</a> | 
+                                <a class="link-text" href="https://codepen.io/jh3y/pen/ExrWxyE" target="_blank">Jh3y</a> |
+                                <a class="link-text" href="https://getbootstrap.com/" target="_blank">Bootstrap</a> |
+                                <a class="link-text" href="https://pages.github.com/" target="">Gitpages</a> |
+                                <a class="link-text" href="https://chatgpt.com/" target="_blank">ChatGPT</a> |
+                                <a class="link-text" href="https://www.emailjs.com/" target="_blank">EmailJS</a> |
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <p>2025 Toby Chen.</p>
+                            <p>
+                                Contact: | <a class="link-text" data-email="toby.chen1337@outlook.com" onclick="alert('Email: toby.chen1337@outlook.com')">Email</a>
+                                | <a class="link-text" href="https://www.linkedin.com/in/toby-chen-167519298" target="_blank">LinkedIn</a>
+                                | <a class="link-text" href="https://www.instagram.com/tobychen1337/" target="_blank">Instagram</a> | 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
